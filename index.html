@@ -485,10 +485,7 @@
   .player-card.rated-MID:hover { border-color: rgba(26,122,60,0.5); box-shadow: 0 12px 32px rgba(0,0,0,0.4), 0 0 20px rgba(26,122,60,0.1); }
   .player-card.rated-FWD:hover { border-color: rgba(224,60,60,0.4); box-shadow: 0 12px 32px rgba(0,0,0,0.4), 0 0 20px rgba(224,60,60,0.08); }
 
-  .card-strip {
-    height: 3px;
-    width: 100%;
-  }
+  .card-strip { height: 3px; width: 100%; }
   .strip-GK  { background: linear-gradient(90deg, #ffa500, #ffcc55); }
   .strip-DEF { background: linear-gradient(90deg, #3c7de0, #6fa8f5); }
   .strip-MID { background: linear-gradient(90deg, #1a7a3c, #4ecb71); }
@@ -511,10 +508,10 @@
     border-radius: 2px;
   }
 
-  .pos-GK { background: rgba(255,165,0,0.15); color: #ffa500; border: 1px solid rgba(255,165,0,0.3); }
-  .pos-DEF { background: rgba(60,125,224,0.15); color: #6fa8f5; border: 1px solid rgba(60,125,224,0.3); }
-  .pos-MID { background: rgba(26,122,60,0.2); color: #4ecb71; border: 1px solid rgba(26,122,60,0.4); }
-  .pos-FWD { background: rgba(224,60,60,0.15); color: #f57070; border: 1px solid rgba(224,60,60,0.3); }
+  .pos-GK  { background: rgba(255,165,0,0.15);   color: #ffa500; border: 1px solid rgba(255,165,0,0.3); }
+  .pos-DEF { background: rgba(60,125,224,0.15);  color: #6fa8f5; border: 1px solid rgba(60,125,224,0.3); }
+  .pos-MID { background: rgba(26,122,60,0.2);    color: #4ecb71; border: 1px solid rgba(26,122,60,0.4); }
+  .pos-FWD { background: rgba(224,60,60,0.15);   color: #f57070; border: 1px solid rgba(224,60,60,0.3); }
 
   .card-avatar {
     width: 52px; height: 52px;
@@ -714,9 +711,7 @@
     padding: 2.5rem 2rem 4rem;
   }
 
-  .form-group {
-    margin-bottom: 1.25rem;
-  }
+  .form-group { margin-bottom: 1.25rem; }
 
   label {
     display: block;
@@ -751,10 +746,7 @@
 
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-  .btn-full {
-    width: 100%;
-    margin-top: 0.5rem;
-  }
+  .btn-full { width: 100%; margin-top: 0.5rem; }
 
   .form-note {
     font-family: 'DM Mono', monospace;
@@ -776,9 +768,8 @@
     background: var(--dark3);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 10px;
-    padding: 0;
-    transition: all 0.25s;
     overflow: hidden;
+    transition: all 0.25s;
   }
 
   .captain-card:hover {
@@ -792,9 +783,7 @@
     background: linear-gradient(90deg, var(--green-dark), var(--green), var(--gold));
   }
 
-  .captain-card-inner {
-    padding: 1.5rem;
-  }
+  .captain-card-inner { padding: 1.5rem; }
 
   .captain-header {
     display: flex;
@@ -814,11 +803,7 @@
     flex-shrink: 0;
   }
 
-  .captain-name {
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--white);
-  }
+  .captain-name { font-weight: 600; font-size: 1rem; color: var(--white); }
 
   .captain-team {
     font-family: 'DM Mono', monospace;
@@ -828,9 +813,7 @@
     margin-top: 0.15rem;
   }
 
-  .budget-bar-wrap {
-    margin-bottom: 1rem;
-  }
+  .budget-bar-wrap { margin-bottom: 1rem; }
 
   .budget-label {
     display: flex;
@@ -845,10 +828,7 @@
     color: var(--gray);
   }
 
-  .budget-label .budget-remaining {
-    color: var(--gold);
-    font-weight: 500;
-  }
+  .budget-label .budget-remaining { color: var(--gold); font-weight: 500; }
 
   .budget-bar {
     height: 4px;
@@ -865,7 +845,7 @@
   }
 
   .budget-fill.warning { background: linear-gradient(90deg, #ffa500, #ffcc55); }
-  .budget-fill.danger { background: linear-gradient(90deg, #e03c3c, #f57070); }
+  .budget-fill.danger  { background: linear-gradient(90deg, #e03c3c, #f57070); }
 
   .squad-slots {
     display: flex;
@@ -895,9 +875,7 @@
     color: #4ecb71;
   }
 
-  .squad-slot.empty {
-    border-style: dashed;
-  }
+  .squad-slot.empty { border-style: dashed; }
 
   .admin-wrap {
     max-width: 900px;
@@ -938,7 +916,6 @@
     gap: 0.25rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding-bottom: 0;
   }
 
   .admin-tab {
@@ -1097,15 +1074,8 @@
     margin-bottom: 1.25rem;
   }
 
-  .stat-input-group label {
-    font-size: 0.6rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .stat-input-group input {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.85rem;
-  }
+  .stat-input-group label { font-size: 0.6rem; margin-bottom: 0.3rem; }
+  .stat-input-group input { padding: 0.5rem 0.75rem; font-size: 0.85rem; }
 
   .price-preview {
     background: rgba(201,168,76,0.08);
@@ -1151,16 +1121,9 @@
     margin-bottom: 0.5rem;
   }
 
-  .login-sub {
-    color: var(--gray);
-    font-size: 0.85rem;
-    margin-bottom: 2rem;
-  }
+  .login-sub { color: var(--gray); font-size: 0.85rem; margin-bottom: 2rem; }
 
-  .assign-select {
-    width: 100%;
-    margin-bottom: 0.75rem;
-  }
+  .assign-select { width: 100%; margin-bottom: 0.75rem; }
 
   .toast {
     position: fixed;
@@ -1183,26 +1146,11 @@
 
   .toast.show { transform: translateY(0); opacity: 1; }
   .toast.success { border-color: rgba(26,122,60,0.5); color: #4ecb71; }
-  .toast.error { border-color: rgba(224,60,60,0.5); color: #f57070; }
+  .toast.error   { border-color: rgba(224,60,60,0.5); color: #f57070; }
 
-  .empty-state {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--gray);
-  }
-
-  .empty-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    opacity: 0.3;
-  }
-
-  .empty-text {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
+  .empty-state { text-align: center; padding: 4rem 2rem; color: var(--gray); }
+  .empty-icon  { font-size: 3rem; margin-bottom: 1rem; opacity: 0.3; }
+  .empty-text  { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
 
   @media (max-width: 600px) {
     .form-row { grid-template-columns: 1fr; }
@@ -1215,13 +1163,11 @@
     .modal { padding: 1.5rem; }
   }
 </style>
-<base target="_blank">
-<base target="_blank">
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo" onclick="navigate('home')" style="cursor:pointer;">MDL <span style="font-size:0.7em;opacity:0.6;">·</span></div>
+  <div class="nav-logo" onclick="navigate('home')">MDL <span style="font-size:0.7em;opacity:0.6;">·</span></div>
   <ul class="nav-links">
     <li><a href="javascript:void(0)" onclick="navigate('home')" id="nav-home" class="active">Home</a></li>
     <li><a href="javascript:void(0)" onclick="navigate('players')" id="nav-players">Players</a></li>
@@ -1233,7 +1179,7 @@
 
 <div class="ticker-bar">
   <div class="ticker-track" id="ticker-track">
-    <span class="ticker-item">⚽ Malelane Draft League</span>
+    <span class="ticker-item">&#9917; Malelane Draft League</span>
     <span class="ticker-sep">·</span>
     <span class="ticker-item" id="tick-players">0 Players Registered</span>
     <span class="ticker-sep">·</span>
@@ -1245,7 +1191,7 @@
     <span class="ticker-sep">·</span>
     <span class="ticker-item">10 Players Per Squad</span>
     <span class="ticker-sep">·</span>
-    <span class="ticker-item">⚽ Malelane Draft League</span>
+    <span class="ticker-item">&#9917; Malelane Draft League</span>
     <span class="ticker-sep">·</span>
     <span class="ticker-item" id="tick-players2">0 Players Registered</span>
     <span class="ticker-sep">·</span>
@@ -1262,6 +1208,7 @@
 
 <div class="toast" id="toast"></div>
 
+<!-- HOME PAGE -->
 <div class="page active" id="page-home">
   <div class="hero">
     <div class="hero-bg"></div>
@@ -1269,7 +1216,7 @@
     <div class="hero-pitch-circle"></div>
     <div class="hero-pitch-center"></div>
     <div class="hero-content">
-      <div class="hero-badge"><span class="badge-dot"></span>Malelane · Season 1 · Live</div>
+      <div class="hero-badge"><span class="badge-dot"></span>Malelane &middot; Season 1 &middot; Live</div>
       <h1 class="hero-title">
         <span class="outline">Malelane</span>
         <span class="accent">Draft</span>
@@ -1281,26 +1228,11 @@
         <button type="button" class="btn-secondary" onclick="navigate('players')">View Player Pool</button>
       </div>
       <div class="hero-stats" id="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num" id="stat-players">0</div>
-          <div class="stat-label">Registered</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num" id="stat-rated">0</div>
-          <div class="stat-label">Rated</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num" id="stat-captains">0</div>
-          <div class="stat-label">Captains</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">100</div>
-          <div class="stat-label">Credits</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">10</div>
-          <div class="stat-label">Per Squad</div>
-        </div>
+        <div class="stat-item"><div class="stat-num" id="stat-players">0</div><div class="stat-label">Registered</div></div>
+        <div class="stat-item"><div class="stat-num" id="stat-rated">0</div><div class="stat-label">Rated</div></div>
+        <div class="stat-item"><div class="stat-num" id="stat-captains">0</div><div class="stat-label">Captains</div></div>
+        <div class="stat-item"><div class="stat-num">100</div><div class="stat-label">Credits</div></div>
+        <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Per Squad</div></div>
       </div>
     </div>
     <div class="scroll-hint">
@@ -1310,6 +1242,7 @@
   </div>
 </div>
 
+<!-- PLAYERS PAGE -->
 <div class="page" id="page-players">
   <div class="section">
     <div class="section-header">
@@ -1328,6 +1261,7 @@
   </div>
 </div>
 
+<!-- AUCTION PAGE -->
 <div class="page" id="page-auction">
   <div class="section">
     <div class="section-header">
@@ -1343,6 +1277,7 @@
   </div>
 </div>
 
+<!-- REGISTER PAGE -->
 <div class="page" id="page-register">
   <div class="register-page-hero">
     <div class="register-page-title">Register<br><span style="color:var(--gold);">to Play</span></div>
@@ -1388,6 +1323,7 @@
   </div>
 </div>
 
+<!-- ADMIN PAGE -->
 <div class="page" id="page-admin">
   <div id="admin-login">
     <div class="login-wrap">
@@ -1395,7 +1331,7 @@
       <div class="login-sub">Enter the organiser password to continue.</div>
       <div class="form-group">
         <label>Password</label>
-        <input type="password" id="admin-pw" placeholder="••••••••" onkeydown="if(event.key==='Enter')adminLogin()">
+        <input type="password" id="admin-pw" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" onkeydown="if(event.key==='Enter')adminLogin()">
       </div>
       <button type="button" class="btn-primary btn-full" onclick="adminLogin()">Login</button>
     </div>
@@ -1463,25 +1399,23 @@
         </div>
         <button type="button" class="btn-sm" onclick="changePassword()" style="margin-bottom:2rem;">Update Password</button>
         <br>
-        <button type="button" class="btn-sm btn-danger" onclick="clearAllData()">⚠️ Clear All Data</button>
+        <button type="button" class="btn-sm btn-danger" onclick="clearAllData()" style="margin-top:1rem;">&#9888;&#65039; Clear All Data</button>
         <p style="color:var(--gray);font-size:0.75rem;margin-top:0.5rem;">This will delete all players, captains, and ratings. Cannot be undone.</p>
       </div>
     </div>
   </div>
 </div>
 
+<!-- RATING MODAL -->
 <div class="modal-overlay" id="rating-modal" onclick="closeRatingModalOverlay(event)">
   <div class="modal" onclick="event.stopPropagation()">
     <div class="modal-title" id="rating-modal-title">Rate Player</div>
     <input type="hidden" id="rating-player-id">
-
     <div id="stat-inputs" class="stats-grid"></div>
-
     <div class="price-preview">
       <div class="price-preview-label">Calculated Price</div>
-      <div class="price-preview-val" id="price-preview">—</div>
+      <div class="price-preview-val" id="price-preview">&mdash;</div>
     </div>
-
     <div class="modal-actions">
       <button type="button" class="btn-sm" onclick="closeRatingModal()">Cancel</button>
       <button type="button" class="btn-sm btn-green" onclick="saveRating()">Save Rating</button>
@@ -1492,18 +1426,17 @@
 <script>
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Initialize
-  updateHeroStats();
-});
-
 const ADMIN_PW_KEY = 'mdl_admin_pw';
 const DATA_KEY = 'mdl_data';
 const DEFAULT_PW = 'mdl2024';
 
 function getData() {
-  const raw = localStorage.getItem(DATA_KEY);
-  return raw ? JSON.parse(raw) : { players: [], captains: [] };
+  try {
+    const raw = localStorage.getItem(DATA_KEY);
+    return raw ? JSON.parse(raw) : { players: [], captains: [] };
+  } catch(e) {
+    return { players: [], captains: [] };
+  }
 }
 
 function saveData(d) {
@@ -1514,50 +1447,36 @@ function getAdminPw() {
   return localStorage.getItem(ADMIN_PW_KEY) || DEFAULT_PW;
 }
 
+// ── Navigation ──────────────────────────────────────────────────────────────
+
 function navigate(page) {
-  try {
-    // Hide all pages
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    // Show target page
-    const targetPage = document.getElementById('page-' + page);
-    if (targetPage) {
-      targetPage.classList.add('active');
-    } else {
-      console.error('Page not found: page-' + page);
-      return;
-    }
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  var target = document.getElementById('page-' + page);
+  if (!target) return;
+  target.classList.add('active');
 
-    // Update nav active state
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    const navLink = document.getElementById('nav-' + page);
-    if (navLink) navLink.classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
+  var navEl = document.getElementById('nav-' + page);
+  if (navEl) navEl.classList.add('active');
 
-    // Scroll to top
-    window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
 
-    // Render page-specific content
-    if (page === 'players') renderPlayers();
-    if (page === 'auction') renderAuction();
-    if (page === 'home') updateHeroStats();
-    if (page === 'admin') {
-      if (adminLoggedIn) {
-        renderAdminPlayers();
-        renderAdminCaptains();
-      }
-    }
-  } catch (e) {
-    console.error('Navigation error:', e);
+  if (page === 'players') renderPlayers();
+  if (page === 'auction') renderAuction();
+  if (page === 'home')    updateHeroStats();
+  if (page === 'admin' && adminLoggedIn) {
+    renderAdminPlayers();
+    renderAdminCaptains();
   }
 }
-// Keyboard navigation support
+
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeRatingModal();
-  }
+  if (e.key === 'Escape') closeRatingModal();
 });
 
+// ── Stat definitions & price calc ───────────────────────────────────────────
 
-const POS_STATS = {
+var POS_STATS = {
   GK:  ['Reflexes', 'Distribution', 'Aerial', 'Communication', 'Positioning'],
   DEF: ['Tackling', 'Pace', 'Aerial', 'Passing', 'Positioning'],
   MID: ['Passing', 'Vision', 'Stamina', 'Dribbling', 'Shooting'],
@@ -1565,45 +1484,36 @@ const POS_STATS = {
 };
 
 function calcPrice(stats) {
-  const vals = Object.values(stats).map(Number).filter(v => !isNaN(v));
+  var vals = Object.values(stats).map(Number).filter(function(v) { return !isNaN(v) && v > 0; });
   if (!vals.length) return null;
-  const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
-  const price = 4 + ((avg - 1) / 9) * 11;
+  var avg = vals.reduce(function(a, b) { return a + b; }, 0) / vals.length;
+  var price = 4 + ((avg - 1) / 9) * 11;
   return Math.round(price * 2) / 2;
 }
 
+// ── Registration ─────────────────────────────────────────────────────────────
+
 function registerPlayer() {
-  const name = document.getElementById('reg-name').value.trim();
-  const phone = document.getElementById('reg-phone').value.trim();
-  const pos = document.getElementById('reg-position').value;
-  const pos2 = document.getElementById('reg-position2').value;
-  const note = document.getElementById('reg-note').value.trim();
+  var name  = document.getElementById('reg-name').value.trim();
+  var phone = document.getElementById('reg-phone').value.trim();
+  var pos   = document.getElementById('reg-position').value;
+  var pos2  = document.getElementById('reg-position2').value;
+  var note  = document.getElementById('reg-note').value.trim();
 
-  if (!name || !phone || !pos) {
-    showToast('Please fill in all required fields.', 'error');
-    return;
-  }
+  if (!name || !phone || !pos) { showToast('Please fill in all required fields.', 'error'); return; }
 
-  const phoneDigits = phone.replace(/\D/g, '');
-  if (phoneDigits.length < 10) {
-    showToast('Please enter a valid phone number.', 'error');
-    return;
-  }
+  var digits = phone.replace(/\D/g, '');
+  if (digits.length < 10) { showToast('Please enter a valid phone number.', 'error'); return; }
 
-  const d = getData();
-  const exists = d.players.find(p => p.phone === phone);
-  if (exists) {
-    showToast('A player with this number is already registered.', 'error');
-    return;
+  var d = getData();
+  if (d.players.find(function(p) { return p.phone === phone; })) {
+    showToast('A player with this number is already registered.', 'error'); return;
   }
 
   d.players.push({
     id: Date.now().toString() + Math.random().toString(36).substr(2, 5),
-    name, phone, pos, pos2, note,
-    stats: null,
-    price: null,
-    captainId: null,
-    bidPrice: null,
+    name: name, phone: phone, pos: pos, pos2: pos2, note: note,
+    stats: null, price: null, captainId: null, bidPrice: null,
   });
   saveData(d);
 
@@ -1617,121 +1527,148 @@ function registerPlayer() {
   updateHeroStats();
 }
 
-let currentFilter = 'ALL';
+// ── Players page ─────────────────────────────────────────────────────────────
+
+var currentFilter = 'ALL';
 
 function filterPlayers(f, btn) {
   currentFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
   if (btn) btn.classList.add('active');
   renderPlayers();
 }
 
 function renderPlayers() {
-  const d = getData();
-  const grid = document.getElementById('players-grid');
-  const countEl = document.getElementById('players-count');
+  var d = getData();
+  var grid = document.getElementById('players-grid');
+  var countEl = document.getElementById('players-count');
 
-  let players = [...d.players];
-  if (currentFilter === 'RATED') players = players.filter(p => p.stats);
-  else if (currentFilter !== 'ALL') players = players.filter(p => p.pos === currentFilter);
+  var players = d.players.slice();
+  if (currentFilter === 'RATED') players = players.filter(function(p) { return p.stats; });
+  else if (currentFilter !== 'ALL') players = players.filter(function(p) { return p.pos === currentFilter; });
 
   countEl.textContent = players.length + ' player' + (players.length !== 1 ? 's' : '');
 
   if (!players.length) {
-    grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">⚽</div><div class="empty-text">No players in this category yet</div></div>';
+    grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">&#9917;</div><div class="empty-text">No players in this category yet</div></div>';
     return;
   }
 
-  grid.innerHTML = players.map(p => playerCardHTML(p, d.captains)).join('');
+  grid.innerHTML = players.map(function(p) { return playerCardHTML(p, d.captains); }).join('');
 }
 
 function playerCardHTML(p, captains) {
-  const initials = p.name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
-  const captain = captains.find(c => c.id === p.captainId);
+  var initials = p.name.split(' ').map(function(w) { return w[0]; }).join('').slice(0, 2).toUpperCase();
+  var captain = captains.find(function(c) { return c.id === p.captainId; });
 
-  let statsHTML = '';
-  let priceHTML = '';
-  let ratingCircle = '';
-  const ratedClass = p.stats ? 'rated-' + p.pos : '';
-  const stripClass = p.stats ? 'strip-' + p.pos : 'strip-pending';
+  var ratedClass = p.stats ? 'rated-' + p.pos : '';
+  var stripClass = p.stats ? 'strip-' + p.pos : 'strip-pending';
+
+  var priceHTML, statsHTML, ratingCircle = '';
 
   if (p.stats) {
-    const statNames = POS_STATS[p.pos] || [];
-    const avg = Object.values(p.stats).reduce((a,b)=>a+b,0)/Object.values(p.stats).length;
-    const overall = Math.round(avg * 10);
-    let ratingClass = 'rating-weak';
-    if (avg >= 8) ratingClass = 'rating-elite';
-    else if (avg >= 6) ratingClass = 'rating-good';
-    else if (avg >= 4) ratingClass = 'rating-average';
+    var statNames = POS_STATS[p.pos] || [];
+    var statVals  = Object.values(p.stats);
+    var avg = statVals.reduce(function(a,b){ return a+b; }, 0) / statVals.length;
+    var overall = Math.round(avg * 10);
+    var ratingClass = avg >= 8 ? 'rating-elite' : avg >= 6 ? 'rating-good' : avg >= 4 ? 'rating-average' : 'rating-weak';
 
     ratingCircle = '<div class="card-rating-circle ' + ratingClass + '">' + overall + '</div>';
 
-    statsHTML = statNames.map(s => {
-      const val = p.stats[s] || 0;
-      const pct = (val / 10) * 100;
-      let color = '#4ecb71';
-      if (val <= 4) color = '#f57070';
-      else if (val <= 6) color = '#ffa500';
-      return '<div class="stat-row"><div class="stat-name">' + s + '</div><div class="stat-bar-wrap"><div class="stat-bar"><div class="stat-bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div><div class="stat-val">' + val + '</div></div></div>';
-    }).join('');
+    statsHTML = '<div class="card-stats">' + statNames.map(function(s) {
+      var val = p.stats[s] || 0;
+      var pct = (val / 10) * 100;
+      var color = val <= 4 ? '#f57070' : val <= 6 ? '#ffa500' : '#4ecb71';
+      return '<div class="stat-row"><div class="stat-name">' + s + '</div>' +
+             '<div class="stat-bar-wrap"><div class="stat-bar"><div class="stat-bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div>' +
+             '<div class="stat-val">' + val + '</div></div></div>';
+    }).join('') + '</div>';
+
     priceHTML = '<div class="card-price-tag"><span class="card-price-currency">cr</span><span class="card-price">' + (p.price ? p.price.toFixed(1) : '?') + '</span></div>';
   } else {
     priceHTML = '<div class="card-price pending">Pending Rating</div>';
     statsHTML = '<div class="card-pending-overlay"><div class="pending-label">Awaiting organiser rating</div></div>';
   }
 
-  const soldTag = captain ? '<div class="card-sold-tag">📋 ' + (captain.team || captain.name) + '</div>' : '';
+  var soldTag = captain ? '<div class="card-sold-tag">&#128203; ' + (captain.team || captain.name) + '</div>' : '';
+  var topPad  = captain ? 'padding-top:2rem;' : '';
 
-  return '<div class="player-card ' + ratedClass + '"><div class="card-strip ' + stripClass + '"></div>' + soldTag + '<div class="card-top" style="' + (captain ? 'padding-top:2rem;' : '') + '"><div class="card-pos-badge pos-' + p.pos + '">' + p.pos + '</div><div class="card-avatar">' + initials + '</div><div class="card-name">' + p.name + '</div><div class="card-price-row">' + priceHTML + ratingCircle + '</div></div><div class="card-divider"></div>' + (p.stats ? '<div class="card-stats">' + statsHTML + '</div>' : statsHTML) + '</div>';
+  return '<div class="player-card ' + ratedClass + '">' +
+    '<div class="card-strip ' + stripClass + '"></div>' +
+    soldTag +
+    '<div class="card-top" style="' + topPad + '">' +
+      '<div class="card-pos-badge pos-' + p.pos + '">' + p.pos + '</div>' +
+      '<div class="card-avatar">' + initials + '</div>' +
+      '<div class="card-name">' + p.name + '</div>' +
+      '<div class="card-price-row">' + priceHTML + ratingCircle + '</div>' +
+    '</div>' +
+    '<div class="card-divider"></div>' +
+    statsHTML +
+  '</div>';
 }
 
+// ── Auction page ─────────────────────────────────────────────────────────────
+
 function renderAuction() {
-  const d = getData();
-  const capGrid = document.getElementById('captains-grid');
-  const unGrid = document.getElementById('unassigned-grid');
-  const countEl = document.getElementById('auction-count');
-  const unCountEl = document.getElementById('unassigned-count');
+  var d = getData();
+  var capGrid  = document.getElementById('captains-grid');
+  var unGrid   = document.getElementById('unassigned-grid');
+  var countEl  = document.getElementById('auction-count');
+  var unCountEl = document.getElementById('unassigned-count');
 
   countEl.textContent = d.captains.length + ' captain' + (d.captains.length !== 1 ? 's' : '');
 
   if (!d.captains.length) {
-    capGrid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">🏆</div><div class="empty-text">No captains added yet</div></div>';
+    capGrid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">&#127942;</div><div class="empty-text">No captains added yet</div></div>';
   } else {
-    capGrid.innerHTML = d.captains.map(c => {
-      const squad = d.players.filter(p => p.captainId === c.id);
-      const spent = squad.reduce((a, p) => a + (p.bidPrice || 0), 0);
-      const remaining = 100 - spent;
-      const pct = Math.max(0, (remaining / 100) * 100);
-      let fillClass = '';
-      if (remaining < 20) fillClass = 'danger';
-      else if (remaining < 40) fillClass = 'warning';
-      const slots = Array(10).fill(null).map((_, i) => {
-        const pl = squad[i];
+    capGrid.innerHTML = d.captains.map(function(c) {
+      var squad   = d.players.filter(function(p) { return p.captainId === c.id; });
+      var spent   = squad.reduce(function(a, p) { return a + (p.bidPrice || 0); }, 0);
+      var remaining = 100 - spent;
+      var pct     = Math.max(0, (remaining / 100) * 100);
+      var fillClass = remaining < 20 ? 'danger' : remaining < 40 ? 'warning' : '';
+      var initials  = c.name.split(' ').map(function(w){ return w[0]; }).join('').slice(0,2).toUpperCase();
+
+      var slots = Array(10).fill(null).map(function(_, i) {
+        var pl = squad[i];
         return pl
           ? '<div class="squad-slot filled">' + pl.name.split(' ')[0] + '</div>'
-          : '<div class="squad-slot empty">—</div>';
+          : '<div class="squad-slot empty">&mdash;</div>';
       }).join('');
 
-      const initials = c.name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
-
-      return '<div class="captain-card"><div class="captain-card-header-strip"></div><div class="captain-card-inner"><div class="captain-header"><div class="captain-avatar">' + initials + '</div><div><div class="captain-name">' + c.name + '</div><div class="captain-team">' + (c.team || 'No team name') + '</div></div></div><div class="budget-bar-wrap"><div class="budget-label"><span>Budget</span><span class="budget-remaining">' + remaining.toFixed(1) + ' cr remaining</span></div><div class="budget-bar"><div class="budget-fill ' + fillClass + '" style="width:' + pct + '%"></div></div></div><div style="font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--gray);margin-top:0.5rem;letter-spacing:0.08em;">' + squad.length + '/10 players · ' + spent.toFixed(1) + ' cr spent</div><div class="squad-slots">' + slots + '</div></div></div>';
+      return '<div class="captain-card">' +
+        '<div class="captain-card-header-strip"></div>' +
+        '<div class="captain-card-inner">' +
+          '<div class="captain-header">' +
+            '<div class="captain-avatar">' + initials + '</div>' +
+            '<div><div class="captain-name">' + c.name + '</div><div class="captain-team">' + (c.team || 'No team name') + '</div></div>' +
+          '</div>' +
+          '<div class="budget-bar-wrap">' +
+            '<div class="budget-label"><span>Budget</span><span class="budget-remaining">' + remaining.toFixed(1) + ' cr remaining</span></div>' +
+            '<div class="budget-bar"><div class="budget-fill ' + fillClass + '" style="width:' + pct + '%"></div></div>' +
+          '</div>' +
+          '<div style="font-family:\'DM Mono\',monospace;font-size:0.6rem;color:var(--gray);margin-top:0.5rem;letter-spacing:0.08em;">' + squad.length + '/10 players &middot; ' + spent.toFixed(1) + ' cr spent</div>' +
+          '<div class="squad-slots">' + slots + '</div>' +
+        '</div></div>';
     }).join('');
   }
 
-  const unassigned = d.players.filter(p => p.stats && !p.captainId);
+  var unassigned = d.players.filter(function(p) { return p.stats && !p.captainId; });
   unCountEl.textContent = unassigned.length + ' available';
 
   if (!unassigned.length) {
-    unGrid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">✅</div><div class="empty-text">All rated players have been drafted</div></div>';
+    unGrid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">&#9989;</div><div class="empty-text">All rated players have been drafted</div></div>';
   } else {
-    unGrid.innerHTML = unassigned.map(p => playerCardHTML(p, d.captains)).join('');
+    unGrid.innerHTML = unassigned.map(function(p) { return playerCardHTML(p, d.captains); }).join('');
   }
 }
 
-let adminLoggedIn = false;
+// ── Admin auth ───────────────────────────────────────────────────────────────
+
+var adminLoggedIn = false;
 
 function adminLogin() {
-  const pw = document.getElementById('admin-pw').value;
+  var pw = document.getElementById('admin-pw').value;
   if (pw === getAdminPw()) {
     adminLoggedIn = true;
     document.getElementById('admin-login').style.display = 'none';
@@ -1752,75 +1689,88 @@ function adminLogout() {
 }
 
 function switchAdminTab(tab, btn) {
-  document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.admin-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.admin-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.admin-panel').forEach(function(p) { p.classList.remove('active'); });
   btn.classList.add('active');
   document.getElementById('tab-' + tab).classList.add('active');
-  if (tab === 'assign') refreshAssignDropdowns();
+  if (tab === 'assign')   refreshAssignDropdowns();
   if (tab === 'captains') renderAdminCaptains();
 }
 
+// ── Admin players ─────────────────────────────────────────────────────────────
+
 function renderAdminPlayers() {
   if (!adminLoggedIn) return;
-  const d = getData();
-  const el = document.getElementById('admin-players-list');
+  var d  = getData();
+  var el = document.getElementById('admin-players-list');
   if (!d.players.length) {
-    el.innerHTML = '<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-text">No players registered yet</div></div>';
+    el.innerHTML = '<div class="empty-state"><div class="empty-icon">&#128203;</div><div class="empty-text">No players registered yet</div></div>';
     return;
   }
-  el.innerHTML = d.players.map(p => {
-    const priceHTML = p.price != null
-      ? '<div class="apl-price">' + p.price.toFixed(1) + '</div>'
+  el.innerHTML = d.players.map(function(p) {
+    var priceHTML = p.price != null
+      ? '<div class="apl-price">' + p.price.toFixed(1) + ' cr</div>'
       : '<div class="apl-price no-price">Unrated</div>';
-    return '<div class="admin-player-row"><div class="apl-name">' + p.name + '</div><div class="apl-pos card-pos-badge pos-' + p.pos + '">' + p.pos + '</div>' + priceHTML + '<button class="btn-sm btn-green" onclick="openRatingModal('" + p.id + "')">Rate</button><button class="btn-sm btn-danger" onclick="deletePlayer('" + p.id + "')">Delete</button></div>';
+    return '<div class="admin-player-row">' +
+      '<div class="apl-name">' + p.name + '</div>' +
+      '<div class="apl-pos card-pos-badge pos-' + p.pos + '">' + p.pos + '</div>' +
+      priceHTML +
+      '<button class="btn-sm btn-green" onclick="openRatingModal(\'' + p.id + '\')">Rate</button>' +
+      '<button class="btn-sm btn-danger" onclick="deletePlayer(\'' + p.id + '\')">Delete</button>' +
+    '</div>';
   }).join('');
 }
 
 function deletePlayer(id) {
   if (!confirm('Delete this player?')) return;
-  const d = getData();
-  d.players = d.players.filter(p => p.id !== id);
+  var d = getData();
+  d.players = d.players.filter(function(p) { return p.id !== id; });
   saveData(d);
   renderAdminPlayers();
   showToast('Player removed.', 'success');
   updateHeroStats();
 }
 
+// ── Rating modal ─────────────────────────────────────────────────────────────
+
 function openRatingModal(playerId) {
-  const d = getData();
-  const player = d.players.find(p => p.id === playerId);
+  var d = getData();
+  var player = d.players.find(function(p) { return p.id === playerId; });
   if (!player) return;
 
   document.getElementById('rating-player-id').value = playerId;
   document.getElementById('rating-modal-title').textContent = 'Rate: ' + player.name;
 
-  const stats = POS_STATS[player.pos] || [];
-  const existing = player.stats || {};
+  var stats    = POS_STATS[player.pos] || [];
+  var existing = player.stats || {};
 
-  const inputsHTML = stats.map(s => {
-    const safeId = s.replace(/\s+/g, '_');
-    return '<div class="stat-input-group"><label>' + s + ' (1-10)</label><input type="number" min="1" max="10" id="stat-' + safeId + '" value="' + (existing[s] || '') + '" placeholder="1–10" oninput="updatePricePreview()"></div>';
+  document.getElementById('stat-inputs').innerHTML = stats.map(function(s) {
+    var safeId = 'stat_' + s.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+    return '<div class="stat-input-group">' +
+      '<label>' + s + ' (1-10)</label>' +
+      '<input type="number" min="1" max="10" id="' + safeId + '" value="' + (existing[s] || '') + '" placeholder="1-10" oninput="updatePricePreview()">' +
+    '</div>';
   }).join('');
 
-  document.getElementById('stat-inputs').innerHTML = inputsHTML;
   updatePricePreview();
   document.getElementById('rating-modal').classList.add('open');
 }
 
 function updatePricePreview() {
-  const pid = document.getElementById('rating-player-id').value;
-  const d = getData();
-  const player = d.players.find(p => p.id === pid);
+  var pid = document.getElementById('rating-player-id').value;
+  var d   = getData();
+  var player = d.players.find(function(p) { return p.id === pid; });
   if (!player) return;
 
-  const stats = POS_STATS[player.pos] || [];
-  const vals = {};
-  stats.forEach(s => {
-    const el = document.getElementById('stat_' + s.replace(/\s+/g, '_'));
+  var stats = POS_STATS[player.pos] || [];
+  var vals  = {};
+  stats.forEach(function(s) {
+    var safeId = 'stat_' + s.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+    var el = document.getElementById(safeId);
     if (el) vals[s] = Number(el.value) || 0;
   });
 
-  const price = calcPrice(vals);
+  var price = calcPrice(vals);
   document.getElementById('price-preview').textContent = price ? price.toFixed(1) : '—';
 }
 
@@ -1829,32 +1779,28 @@ function closeRatingModal() {
 }
 
 function closeRatingModalOverlay(event) {
-  if (event.target === event.currentTarget) {
-    closeRatingModal();
-  }
+  if (event.target === event.currentTarget) closeRatingModal();
 }
 
 function saveRating() {
-  const pid = document.getElementById('rating-player-id').value;
-  const d = getData();
-  const player = d.players.find(p => p.id === pid);
+  var pid = document.getElementById('rating-player-id').value;
+  var d   = getData();
+  var player = d.players.find(function(p) { return p.id === pid; });
   if (!player) return;
 
-  const stats = POS_STATS[player.pos] || [];
-  const vals = {};
-  let valid = true;
+  var stats = POS_STATS[player.pos] || [];
+  var vals  = {};
+  var valid = true;
 
-  stats.forEach(s => {
-    const el = document.getElementById('stat_' + s.replace(/\s+/g, '_'));
-    const v = Number(el && el.value);
+  stats.forEach(function(s) {
+    var safeId = 'stat_' + s.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+    var el = document.getElementById(safeId);
+    var v  = Number(el && el.value);
     if (!v || v < 1 || v > 10) { valid = false; return; }
     vals[s] = v;
   });
 
-  if (!valid) {
-    showToast('All stats must be between 1 and 10.', 'error');
-    return;
-  }
+  if (!valid) { showToast('All stats must be between 1 and 10.', 'error'); return; }
 
   player.stats = vals;
   player.price = calcPrice(vals);
@@ -1865,13 +1811,18 @@ function saveRating() {
   showToast(player.name + ' rated — ' + player.price.toFixed(1) + ' cr', 'success');
 }
 
+// ── Admin captains ────────────────────────────────────────────────────────────
+
 function addCaptain() {
-  const name = document.getElementById('cap-name').value.trim();
-  const team = document.getElementById('cap-team').value.trim();
+  var name = document.getElementById('cap-name').value.trim();
+  var team = document.getElementById('cap-team').value.trim();
   if (!name) { showToast('Enter captain name.', 'error'); return; }
 
-  const d = getData();
-  d.captains.push({ id: Date.now().toString() + Math.random().toString(36).substr(2,5), name, team, budget: 100 });
+  var d = getData();
+  d.captains.push({
+    id: Date.now().toString() + Math.random().toString(36).substr(2, 5),
+    name: name, team: team, budget: 100
+  });
   saveData(d);
 
   document.getElementById('cap-name').value = '';
@@ -1884,81 +1835,93 @@ function addCaptain() {
 
 function renderAdminCaptains() {
   if (!adminLoggedIn) return;
-  const d = getData();
-  const el = document.getElementById('admin-captains-list');
+  var d  = getData();
+  var el = document.getElementById('admin-captains-list');
   if (!d.captains.length) {
-    el.innerHTML = '<div class="empty-state"><div class="empty-icon">🏆</div><div class="empty-text">No captains yet</div></div>';
+    el.innerHTML = '<div class="empty-state"><div class="empty-icon">&#127942;</div><div class="empty-text">No captains yet</div></div>';
     return;
   }
-  el.innerHTML = d.captains.map(c => {
-    const squad = d.players.filter(p => p.captainId === c.id);
-    const spent = squad.reduce((a, p) => a + (p.bidPrice || 0), 0);
-    return '<div class="admin-player-row"><div class="apl-name">' + c.name + ' <span style="color:var(--gray);font-size:0.8rem;">' + (c.team ? '· ' + c.team : '') + '</span></div><div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--gold);margin-left:auto;">' + (100 - spent).toFixed(1) + ' cr left</div><div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--gray);">' + squad.length + '/10</div><button class="btn-sm btn-danger" onclick="deleteCaptain('" + c.id + "')">Delete</button></div>';
+  el.innerHTML = d.captains.map(function(c) {
+    var squad = d.players.filter(function(p) { return p.captainId === c.id; });
+    var spent = squad.reduce(function(a, p) { return a + (p.bidPrice || 0); }, 0);
+    return '<div class="admin-player-row">' +
+      '<div class="apl-name">' + c.name + (c.team ? ' <span style="color:var(--gray);font-size:0.8rem;">&middot; ' + c.team + '</span>' : '') + '</div>' +
+      '<div style="font-family:\'DM Mono\',monospace;font-size:0.65rem;color:var(--gold);margin-left:auto;">' + (100 - spent).toFixed(1) + ' cr left</div>' +
+      '<div style="font-family:\'DM Mono\',monospace;font-size:0.65rem;color:var(--gray);">' + squad.length + '/10</div>' +
+      '<button class="btn-sm btn-danger" onclick="deleteCaptain(\'' + c.id + '\')">Delete</button>' +
+    '</div>';
   }).join('');
 }
 
 function deleteCaptain(id) {
   if (!confirm('Delete this captain? Their players will be unassigned.')) return;
-  const d = getData();
-  d.players.forEach(p => { if (p.captainId === id) { p.captainId = null; p.bidPrice = null; } });
-  d.captains = d.captains.filter(c => c.id !== id);
+  var d = getData();
+  d.players.forEach(function(p) {
+    if (p.captainId === id) { p.captainId = null; p.bidPrice = null; }
+  });
+  d.captains = d.captains.filter(function(c) { return c.id !== id; });
   saveData(d);
   renderAdminCaptains();
   updateHeroStats();
   showToast('Captain removed.', 'success');
 }
 
-function refreshAssignDropdowns() {
-  const d = getData();
-  const pSel = document.getElementById('assign-player');
-  const cSel = document.getElementById('assign-captain');
+// ── Assign panel ─────────────────────────────────────────────────────────────
 
-  const available = d.players.filter(p => p.stats && !p.captainId);
+function refreshAssignDropdowns() {
+  var d    = getData();
+  var pSel = document.getElementById('assign-player');
+  var cSel = document.getElementById('assign-captain');
+
+  var available = d.players.filter(function(p) { return p.stats && !p.captainId; });
   pSel.innerHTML = available.length
-    ? available.map(p => '<option value="' + p.id + '">' + p.name + ' (' + p.pos + ') — ' + (p.price ? p.price.toFixed(1) : '?') + ' cr</option>').join('')
+    ? available.map(function(p) {
+        return '<option value="' + p.id + '">' + p.name + ' (' + p.pos + ') — ' + (p.price ? p.price.toFixed(1) : '?') + ' cr</option>';
+      }).join('')
     : '<option value="">No unassigned rated players</option>';
 
   cSel.innerHTML = d.captains.length
-    ? d.captains.map(c => {
-        const squad = d.players.filter(pl => pl.captainId === c.id);
-        const spent = squad.reduce((a, pl) => a + (pl.bidPrice || 0), 0);
-        return '<option value="' + c.id + '">' + c.name + ' — ' + (100-spent).toFixed(1) + ' cr left (' + squad.length + '/10)</option>';
+    ? d.captains.map(function(c) {
+        var squad = d.players.filter(function(pl) { return pl.captainId === c.id; });
+        var spent = squad.reduce(function(a, pl) { return a + (pl.bidPrice || 0); }, 0);
+        return '<option value="' + c.id + '">' + c.name + ' — ' + (100 - spent).toFixed(1) + ' cr left (' + squad.length + '/10)</option>';
       }).join('')
     : '<option value="">No captains added</option>';
 }
 
 function assignPlayer() {
-  const pid = document.getElementById('assign-player').value;
-  const cid = document.getElementById('assign-captain').value;
-  const bid = parseFloat(document.getElementById('assign-bid').value);
+  var pid = document.getElementById('assign-player').value;
+  var cid = document.getElementById('assign-captain').value;
+  var bid = parseFloat(document.getElementById('assign-bid').value);
 
   if (!pid || !cid) { showToast('Select a player and captain.', 'error'); return; }
   if (isNaN(bid) || bid <= 0) { showToast('Enter a valid bid amount.', 'error'); return; }
 
-  const d = getData();
-  const player = d.players.find(p => p.id === pid);
-  const captain = d.captains.find(c => c.id === cid);
-
+  var d      = getData();
+  var player  = d.players.find(function(p) { return p.id === pid; });
+  var captain = d.captains.find(function(c) { return c.id === cid; });
   if (!player || !captain) return;
 
-  const squad = d.players.filter(p => p.captainId === cid);
-  const spent = squad.reduce((a, p) => a + (p.bidPrice || 0), 0);
-  const remaining = 100 - spent;
+  var squad     = d.players.filter(function(p) { return p.captainId === cid; });
+  var spent     = squad.reduce(function(a, p) { return a + (p.bidPrice || 0); }, 0);
+  var remaining = 100 - spent;
 
   if (squad.length >= 10) { showToast(captain.name + "'s squad is full.", 'error'); return; }
-  if (bid > remaining) { showToast('Not enough credits. ' + remaining.toFixed(1) + ' cr remaining.', 'error'); return; }
+  if (bid > remaining)    { showToast('Not enough credits. ' + remaining.toFixed(1) + ' cr remaining.', 'error'); return; }
 
   player.captainId = cid;
-  player.bidPrice = bid;
+  player.bidPrice  = bid;
   saveData(d);
 
   document.getElementById('assign-bid').value = '';
   refreshAssignDropdowns();
-  showToast(player.name + ' → ' + captain.name + ' for ' + bid + ' cr', 'success');
+  showToast(player.name + ' assigned to ' + captain.name + ' for ' + bid + ' cr', 'success');
 }
 
+// ── Settings ──────────────────────────────────────────────────────────────────
+
 function changePassword() {
-  const pw = document.getElementById('new-pw').value.trim();
+  var pw = document.getElementById('new-pw').value.trim();
   if (pw.length < 4) { showToast('Password must be at least 4 characters.', 'error'); return; }
   localStorage.setItem(ADMIN_PW_KEY, pw);
   document.getElementById('new-pw').value = '';
@@ -1966,7 +1929,7 @@ function changePassword() {
 }
 
 function clearAllData() {
-  if (!confirm('⚠️ This will DELETE all players, captains, and ratings. Are you sure?')) return;
+  if (!confirm('This will DELETE all players, captains, and ratings. Are you sure?')) return;
   localStorage.removeItem(DATA_KEY);
   renderAdminPlayers();
   renderAdminCaptains();
@@ -1974,28 +1937,43 @@ function clearAllData() {
   showToast('All data cleared.', 'success');
 }
 
+// ── Hero stats & toast ────────────────────────────────────────────────────────
+
 function updateHeroStats() {
-  const d = getData();
-  const pc = d.players.length;
-  const rc = d.players.filter(p => p.stats).length;
-  const cc = d.captains.length;
-  document.getElementById('stat-players').textContent = pc;
-  document.getElementById('stat-rated').textContent = rc;
-  document.getElementById('stat-captains').textContent = cc;
-  ['tick-players','tick-players2'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = pc + ' Players Registered'; });
-  ['tick-rated','tick-rated2'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = rc + ' Rated'; });
-  ['tick-caps','tick-caps2'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = cc + ' Captains'; });
+  var d  = getData();
+  var pc = d.players.length;
+  var rc = d.players.filter(function(p) { return p.stats; }).length;
+  var cc = d.captains.length;
+
+  var statPlayers   = document.getElementById('stat-players');
+  var statRated     = document.getElementById('stat-rated');
+  var statCaptains  = document.getElementById('stat-captains');
+  if (statPlayers)  statPlayers.textContent  = pc;
+  if (statRated)    statRated.textContent    = rc;
+  if (statCaptains) statCaptains.textContent = cc;
+
+  ['tick-players','tick-players2'].forEach(function(id) {
+    var el = document.getElementById(id); if (el) el.textContent = pc + ' Players Registered';
+  });
+  ['tick-rated','tick-rated2'].forEach(function(id) {
+    var el = document.getElementById(id); if (el) el.textContent = rc + ' Rated';
+  });
+  ['tick-caps','tick-caps2'].forEach(function(id) {
+    var el = document.getElementById(id); if (el) el.textContent = cc + ' Captains';
+  });
 }
 
-let toastTimer;
+var toastTimer;
 function showToast(msg, type) {
-  const el = document.getElementById('toast');
+  var el = document.getElementById('toast');
   el.textContent = msg;
-  el.className = 'toast show ' + (type || '');
+  el.className   = 'toast show' + (type ? ' ' + type : '');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => { el.className = 'toast'; }, 3000);
+  toastTimer = setTimeout(function() { el.className = 'toast'; }, 3000);
 }
 
+// ── Init ──────────────────────────────────────────────────────────────────────
+updateHeroStats();
 </script>
 </body>
 </html>
