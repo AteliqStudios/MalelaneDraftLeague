@@ -1220,13 +1220,13 @@
 <body>
 
 <nav>
-  <div class="nav-logo" onclick="navigate('home')">MDL <span style="font-size:0.7em;opacity:0.6;">·</span></div>
+  <div class="nav-logo" onclick="navigate('home')" style="cursor:pointer;">MDL <span style="font-size:0.7em;opacity:0.6;">·</span></div>
   <ul class="nav-links">
-    <li><a onclick="navigate('home')" id="nav-home" class="active">Home</a></li>
-    <li><a onclick="navigate('players')" id="nav-players">Players</a></li>
-    <li><a onclick="navigate('auction')" id="nav-auction">Auction</a></li>
-    <li><a onclick="navigate('register')" id="nav-register">Register</a></li>
-    <li><a onclick="navigate('admin')" id="nav-admin">Admin</a></li>
+    <li><a href="javascript:void(0)" onclick="navigate('home')" id="nav-home" class="active">Home</a></li>
+    <li><a href="javascript:void(0)" onclick="navigate('players')" id="nav-players">Players</a></li>
+    <li><a href="javascript:void(0)" onclick="navigate('auction')" id="nav-auction">Auction</a></li>
+    <li><a href="javascript:void(0)" onclick="navigate('register')" id="nav-register">Register</a></li>
+    <li><a href="javascript:void(0)" onclick="navigate('admin')" id="nav-admin">Admin</a></li>
   </ul>
 </nav>
 
@@ -1276,8 +1276,8 @@
       </h1>
       <p class="hero-sub">Register. Get Rated. Get Drafted. Dominate.</p>
       <div class="hero-cta">
-        <button class="btn-primary" onclick="navigate('register')">Register as Player</button>
-        <button class="btn-secondary" onclick="navigate('players')">View Player Pool</button>
+        <button type="button" class="btn-primary" onclick="navigate('register')">Register as Player</button>
+        <button type="button" class="btn-secondary" onclick="navigate('players')">View Player Pool</button>
       </div>
       <div class="hero-stats" id="hero-stats">
         <div class="stat-item">
@@ -1382,7 +1382,7 @@
       <label>Anything else we should know?</label>
       <textarea id="reg-note" rows="3" placeholder="e.g. injury history, availability, etc." style="resize:vertical;"></textarea>
     </div>
-    <button class="btn-primary btn-full" onclick="registerPlayer()">Submit Registration</button>
+    <button type="button" class="btn-primary btn-full" onclick="registerPlayer()">Submit Registration</button>
     <p class="form-note">Your rating and price will be assigned by the organiser before auction day.</p>
   </div>
 </div>
@@ -1396,7 +1396,7 @@
         <label>Password</label>
         <input type="password" id="admin-pw" placeholder="••••••••" onkeydown="if(event.key==='Enter')adminLogin()">
       </div>
-      <button class="btn-primary btn-full" onclick="adminLogin()">Login</button>
+      <button type="button" class="btn-primary btn-full" onclick="adminLogin()">Login</button>
     </div>
   </div>
 
@@ -1406,7 +1406,7 @@
         <div class="admin-title">Admin Panel</div>
         <div style="display:flex;gap:0.5rem;align-items:center;">
           <span class="admin-badge">Organiser</span>
-          <button class="btn-sm btn-danger" onclick="adminLogout()">Logout</button>
+          <button type="button" class="btn-sm btn-danger" onclick="adminLogout()">Logout</button>
         </div>
       </div>
 
@@ -1432,7 +1432,7 @@
             <input type="text" id="cap-team" placeholder="e.g. Lowveld Lions">
           </div>
         </div>
-        <button class="btn-primary" onclick="addCaptain()" style="margin-bottom:2rem;">Add Captain</button>
+        <button type="button" class="btn-primary" onclick="addCaptain()" style="margin-bottom:2rem;">Add Captain</button>
         <div id="admin-captains-list"></div>
       </div>
 
@@ -1452,7 +1452,7 @@
           <label>Winning Bid (credits)</label>
           <input type="number" id="assign-bid" placeholder="e.g. 8.5" min="0.5" max="100" step="0.5">
         </div>
-        <button class="btn-primary" onclick="assignPlayer()">Confirm Assignment</button>
+        <button type="button" class="btn-primary" onclick="assignPlayer()">Confirm Assignment</button>
       </div>
 
       <div class="admin-panel" id="tab-settings">
@@ -1460,9 +1460,9 @@
           <label>Change Admin Password</label>
           <input type="password" id="new-pw" placeholder="New password">
         </div>
-        <button class="btn-sm" onclick="changePassword()" style="margin-bottom:2rem;">Update Password</button>
+        <button type="button" class="btn-sm" onclick="changePassword()" style="margin-bottom:2rem;">Update Password</button>
         <br>
-        <button class="btn-sm btn-danger" onclick="clearAllData()">⚠️ Clear All Data</button>
+        <button type="button" class="btn-sm btn-danger" onclick="clearAllData()">⚠️ Clear All Data</button>
         <p style="color:var(--gray);font-size:0.75rem;margin-top:0.5rem;">This will delete all players, captains, and ratings. Cannot be undone.</p>
       </div>
     </div>
@@ -1482,13 +1482,20 @@
     </div>
 
     <div class="modal-actions">
-      <button class="btn-sm" onclick="closeRatingModal()">Cancel</button>
-      <button class="btn-sm btn-green" onclick="saveRating()">Save Rating</button>
+      <button type="button" class="btn-sm" onclick="closeRatingModal()">Cancel</button>
+      <button type="button" class="btn-sm btn-green" onclick="saveRating()">Save Rating</button>
     </div>
   </div>
 </div>
 
 <script>
+"use strict";
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Initialize
+  updateHeroStats();
+});
+
 const ADMIN_PW_KEY = 'mdl_admin_pw';
 const DATA_KEY = 'mdl_data';
 const DEFAULT_PW = 'mdl2024';
@@ -1507,22 +1514,47 @@ function getAdminPw() {
 }
 
 function navigate(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  document.getElementById('page-' + page).classList.add('active');
-  const navLink = document.getElementById('nav-' + page);
-  if (navLink) navLink.classList.add('active');
-  window.scrollTo(0, 0);
-  if (page === 'players') renderPlayers();
-  if (page === 'auction') renderAuction();
-  if (page === 'home') updateHeroStats();
-  if (page === 'admin') {
-    if (adminLoggedIn) {
-      renderAdminPlayers();
-      renderAdminCaptains();
+  try {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    // Show target page
+    const targetPage = document.getElementById('page-' + page);
+    if (targetPage) {
+      targetPage.classList.add('active');
+    } else {
+      console.error('Page not found: page-' + page);
+      return;
     }
+
+    // Update nav active state
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const navLink = document.getElementById('nav-' + page);
+    if (navLink) navLink.classList.add('active');
+
+    // Scroll to top
+    window.scrollTo(0, 0);
+
+    // Render page-specific content
+    if (page === 'players') renderPlayers();
+    if (page === 'auction') renderAuction();
+    if (page === 'home') updateHeroStats();
+    if (page === 'admin') {
+      if (adminLoggedIn) {
+        renderAdminPlayers();
+        renderAdminCaptains();
+      }
+    }
+  } catch (e) {
+    console.error('Navigation error:', e);
   }
 }
+// Keyboard navigation support
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeRatingModal();
+  }
+});
+
 
 const POS_STATS = {
   GK:  ['Reflexes', 'Distribution', 'Aerial', 'Communication', 'Positioning'],
@@ -1765,7 +1797,7 @@ function openRatingModal(playerId) {
   const existing = player.stats || {};
 
   const inputsHTML = stats.map(s => {
-    const safeId = s.replace(/\s/g, '-');
+    const safeId = s.replace(/\s+/g, '_');
     return '<div class="stat-input-group"><label>' + s + ' (1-10)</label><input type="number" min="1" max="10" id="stat-' + safeId + '" value="' + (existing[s] || '') + '" placeholder="1–10" oninput="updatePricePreview()"></div>';
   }).join('');
 
@@ -1783,7 +1815,7 @@ function updatePricePreview() {
   const stats = POS_STATS[player.pos] || [];
   const vals = {};
   stats.forEach(s => {
-    const el = document.getElementById('stat-' + s.replace(/\s/g, '-'));
+    const el = document.getElementById('stat_' + s.replace(/\s+/g, '_'));
     if (el) vals[s] = Number(el.value) || 0;
   });
 
@@ -1812,7 +1844,7 @@ function saveRating() {
   let valid = true;
 
   stats.forEach(s => {
-    const el = document.getElementById('stat-' + s.replace(/\s/g, '-'));
+    const el = document.getElementById('stat_' + s.replace(/\s+/g, '_'));
     const v = Number(el && el.value);
     if (!v || v < 1 || v > 10) { valid = false; return; }
     vals[s] = v;
@@ -1963,7 +1995,6 @@ function showToast(msg, type) {
   toastTimer = setTimeout(() => { el.className = 'toast'; }, 3000);
 }
 
-updateHeroStats();
 </script>
 </body>
 </html>
