@@ -18,76 +18,37 @@ input,select,textarea{font-family:inherit;}
 
 /* ── TOKENS ────────────────────────────────────────────── */
 :root{
-  --green:#1a7a3c; --green-light:#22a050; --green-dark:#0f4f25; --green-glow:rgba(26,122,60,0.25);
-  --gold:#c9a84c; --gold-light:#e8c96a; --gold-dim:#8a7333; --gold-glow:rgba(201,168,76,0.2);
-  --bg:#080c08; --bg2:#0e120e; --bg3:#141a14; --bg4:#1c231c;
-  --border:rgba(255,255,255,0.06); --border-gold:rgba(201,168,76,0.2);
-  --txt:#f0f4f0; --txt2:rgba(240,244,240,0.6); --txt3:rgba(240,244,240,0.35);
-  --red:#e03c3c; --blue:#3c7de0; --orange:#e08c3c;
+  --green:#1a7a3c;--green-light:#22a050;--green-dark:#0f4f25;--green-glow:rgba(26,122,60,0.25);
+  --gold:#c9a84c;--gold-light:#e8c96a;--gold-dim:#8a7333;--gold-glow:rgba(201,168,76,0.2);
+  --bg:#080c08;--bg2:#0e120e;--bg3:#141a14;--bg4:#1c231c;
+  --border:rgba(255,255,255,0.06);--border-gold:rgba(201,168,76,0.2);
+  --txt:#f0f4f0;--txt2:rgba(240,244,240,0.6);--txt3:rgba(240,244,240,0.35);
+  --red:#e03c3c;--blue:#3c7de0;--orange:#e08c3c;
   --font-display:'Bebas Neue',sans-serif;
   --font-body:'DM Sans',sans-serif;
   --font-mono:'DM Mono',monospace;
-  --radius:6px; --radius-lg:12px;
+  --radius:6px;--radius-lg:12px;
   --shadow:0 8px 32px rgba(0,0,0,0.5);
   --shadow-gold:0 8px 32px rgba(201,168,76,0.15);
 }
 
 /* ── BASE ──────────────────────────────────────────────── */
-body{
-  font-family:var(--font-body);
-  background:var(--bg);
-  color:var(--txt);
-  min-height:100vh;
-  overflow-x:hidden;
-  line-height:1.6;
-}
-
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity:0.35;
-}
+body{font-family:var(--font-body);background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden;line-height:1.6;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:0.35;}
 
 /* ── TICKER ────────────────────────────────────────────── */
-.ticker-bar{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  height:30px;background:var(--gold);overflow:hidden;
-  display:flex;align-items:center;
-}
-.ticker-track{
-  display:flex;align-items:center;white-space:nowrap;
-  animation:ticker 32s linear infinite;
-}
-.ticker-item{
-  font-family:var(--font-mono);font-size:0.58rem;font-weight:600;
-  letter-spacing:0.14em;text-transform:uppercase;color:var(--bg);
-  padding:0 1.5rem;
-}
+.ticker-bar{position:fixed;top:0;left:0;right:0;z-index:200;height:30px;background:var(--gold);overflow:hidden;display:flex;align-items:center;}
+.ticker-track{display:flex;align-items:center;white-space:nowrap;animation:ticker 36s linear infinite;}
+.ticker-item{font-family:var(--font-mono);font-size:0.58rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bg);padding:0 1.5rem;}
 .ticker-sep{color:rgba(0,0,0,0.25);font-weight:700;font-size:0.7rem;}
 @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* ── NAV ───────────────────────────────────────────────── */
-nav{
-  position:fixed;top:30px;left:0;right:0;z-index:199;
-  height:60px;display:flex;align-items:center;justify-content:space-between;
-  padding:0 2rem;
-  background:rgba(8,12,8,0.9);backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border-gold);
-}
-.nav-logo{
-  font-family:var(--font-display);font-size:1.35rem;letter-spacing:0.12em;
-  cursor:pointer;
-  background:linear-gradient(90deg,var(--gold),var(--gold-light),#fff8d0,var(--gold-light),var(--gold));
-  background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;animation:shimmer 3s linear infinite;
-}
+nav{position:fixed;top:30px;left:0;right:0;z-index:199;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(8,12,8,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-gold);}
+.nav-logo{font-family:var(--font-display);font-size:1.35rem;letter-spacing:0.12em;cursor:pointer;background:linear-gradient(90deg,var(--gold),var(--gold-light),#fff8d0,var(--gold-light),var(--gold));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite;}
 @keyframes shimmer{to{background-position:200% center;}}
 .nav-links{display:flex;gap:0.15rem;list-style:none;}
-.nav-links a{
-  font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--txt3);text-decoration:none;padding:0.4rem 0.7rem;border-radius:4px;
-  transition:all 0.2s;border:none;background:none;cursor:pointer;
-}
+.nav-links a{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt3);text-decoration:none;padding:0.4rem 0.7rem;border-radius:4px;transition:all 0.2s;border:none;background:none;cursor:pointer;}
 .nav-links a:hover,.nav-links a.active{color:var(--gold);background:var(--gold-glow);}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
 .hamburger span{display:block;width:22px;height:2px;background:var(--txt);border-radius:2px;transition:all 0.3s;}
@@ -98,158 +59,56 @@ nav{
 @keyframes pageIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── HERO ──────────────────────────────────────────────── */
-.hero{
-  position:relative;min-height:calc(100vh - 90px);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:4rem 2rem;overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 60% 50% at 50% 10%,rgba(26,122,60,0.2) 0%,transparent 65%),
-    radial-gradient(ellipse 40% 30% at 85% 80%,rgba(201,168,76,0.1) 0%,transparent 60%),
-    radial-gradient(ellipse 30% 25% at 10% 70%,rgba(26,122,60,0.08) 0%,transparent 55%),
-    linear-gradient(180deg,#060a06 0%,#0e120e 100%);
-}
-.pitch-lines{
-  position:absolute;inset:0;opacity:0.045;
-  background-image:
-    repeating-linear-gradient(90deg,rgba(255,255,255,0.8) 0,rgba(255,255,255,0.8) 1px,transparent 1px,transparent 80px),
-    repeating-linear-gradient(0deg,rgba(255,255,255,0.8) 0,rgba(255,255,255,0.8) 1px,transparent 1px,transparent 80px);
-}
-.pitch-circle{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:280px;height:280px;border-radius:50%;
-  border:1px solid rgba(255,255,255,0.06);pointer-events:none;
-}
-.pitch-dot{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.08);pointer-events:none;
-}
+.hero{position:relative;min-height:calc(100vh - 90px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 10%,rgba(26,122,60,0.2) 0%,transparent 65%),radial-gradient(ellipse 40% 30% at 85% 80%,rgba(201,168,76,0.1) 0%,transparent 60%),radial-gradient(ellipse 30% 25% at 10% 70%,rgba(26,122,60,0.08) 0%,transparent 55%),linear-gradient(180deg,#060a06 0%,#0e120e 100%);}
+.pitch-lines{position:absolute;inset:0;opacity:0.045;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,0.8) 0,rgba(255,255,255,0.8) 1px,transparent 1px,transparent 80px),repeating-linear-gradient(0deg,rgba(255,255,255,0.8) 0,rgba(255,255,255,0.8) 1px,transparent 1px,transparent 80px);}
+.pitch-circle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:280px;height:280px;border-radius:50%;border:1px solid rgba(255,255,255,0.06);pointer-events:none;}
+.pitch-dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.08);pointer-events:none;}
 .hero-content{position:relative;z-index:2;}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:0.5rem;
-  font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--gold);border:1px solid var(--border-gold);padding:0.4rem 1.2rem;
-  border-radius:2px;margin-bottom:2rem;background:rgba(201,168,76,0.05);
-  backdrop-filter:blur(4px);animation:fadeUp 0.8s ease both;
-}
-.badge-dot{
-  width:6px;height:6px;border-radius:50%;background:var(--green-light);flex-shrink:0;
-  animation:pulseDot 2s ease infinite;
-}
-@keyframes pulseDot{
-  0%,100%{box-shadow:0 0 0 0 rgba(34,160,80,0.5);}
-  50%{box-shadow:0 0 0 5px rgba(34,160,80,0);}
-}
-.hero-title{
-  font-family:var(--font-display);
-  font-size:clamp(3.5rem,11vw,9rem);
-  line-height:0.9;letter-spacing:0.02em;
-  animation:fadeUp 0.8s 0.1s ease both;
-}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border-gold);padding:0.4rem 1.2rem;border-radius:2px;margin-bottom:2rem;background:rgba(201,168,76,0.05);backdrop-filter:blur(4px);animation:fadeUp 0.8s ease both;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green-light);flex-shrink:0;animation:pulseDot 2s ease infinite;}
+@keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(34,160,80,0.5);}50%{box-shadow:0 0 0 5px rgba(34,160,80,0);}}
+.hero-title{font-family:var(--font-display);font-size:clamp(3.5rem,11vw,9rem);line-height:0.9;letter-spacing:0.02em;animation:fadeUp 0.8s 0.1s ease both;}
 .hero-title .outline{-webkit-text-stroke:1px rgba(255,255,255,0.25);color:transparent;display:block;}
 .hero-title .accent{color:var(--gold);display:block;}
-.hero-sub{
-  font-size:1rem;color:var(--txt2);margin-top:1.5rem;
-  letter-spacing:0.04em;animation:fadeUp 0.8s 0.2s ease both;
-}
-.hero-cta{
-  display:flex;gap:1rem;justify-content:center;margin-top:2.5rem;
-  flex-wrap:wrap;animation:fadeUp 0.8s 0.3s ease both;
-}
-.hero-stats{
-  display:flex;justify-content:center;margin-top:4rem;
-  animation:fadeUp 0.8s 0.4s ease both;
-  border:1px solid var(--border);border-radius:var(--radius);
-  background:rgba(255,255,255,0.02);backdrop-filter:blur(6px);
-  overflow:hidden;flex-wrap:wrap;
-}
-.hstat{
-  text-align:center;padding:1.25rem 2rem;
-  border-right:1px solid var(--border);flex:1;min-width:90px;
-}
+.hero-sub{font-size:1rem;color:var(--txt2);margin-top:1.5rem;letter-spacing:0.04em;animation:fadeUp 0.8s 0.2s ease both;}
+.hero-cta{display:flex;gap:1rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap;animation:fadeUp 0.8s 0.3s ease both;}
+.hero-stats{display:flex;justify-content:center;margin-top:4rem;animation:fadeUp 0.8s 0.4s ease both;border:1px solid var(--border);border-radius:var(--radius);background:rgba(255,255,255,0.02);backdrop-filter:blur(6px);overflow:hidden;flex-wrap:wrap;}
+.hstat{text-align:center;padding:1.25rem 2rem;border-right:1px solid var(--border);flex:1;min-width:90px;}
 .hstat:last-child{border-right:none;}
 .hstat-num{font-family:var(--font-display);font-size:2.25rem;color:var(--gold);line-height:1;}
 .hstat-label{font-family:var(--font-mono);font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--txt3);margin-top:0.2rem;}
-.scroll-cue{
-  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:0.4rem;opacity:0.3;
-  animation:fadeUp 1s 1s ease both;
-}
-.scroll-line{
-  width:1px;height:36px;
-  background:linear-gradient(to bottom,transparent,var(--gold));
-  animation:scrollAnim 2s ease infinite;
-}
+.scroll-cue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.4rem;opacity:0.3;animation:fadeUp 1s 1s ease both;}
+.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,transparent,var(--gold));animation:scrollAnim 2s ease infinite;}
 .scroll-txt{font-family:var(--font-mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
-@keyframes scrollAnim{
-  0%{transform:scaleY(0);transform-origin:top;}
-  50%{transform:scaleY(1);transform-origin:top;}
-  51%{transform:scaleY(1);transform-origin:bottom;}
-  100%{transform:scaleY(0);transform-origin:bottom;}
-}
+@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── CONTACT STRIP ─────────────────────────────────────── */
-.contact-strip{
-  background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:1rem 2rem;text-align:center;
-  display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;
-}
-.contact-strip-item{
-  display:flex;align-items:center;gap:0.5rem;
-  font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.08em;color:var(--txt2);
-  text-decoration:none;transition:color 0.2s;
-}
+.contact-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1rem 2rem;text-align:center;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;}
+.contact-strip-item{display:flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.08em;color:var(--txt2);text-decoration:none;transition:color 0.2s;}
 .contact-strip-item:hover{color:var(--gold);}
-.contact-strip-item .ci-icon{font-size:0.9rem;}
-.contact-org-label{
-  font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.14em;
-  text-transform:uppercase;color:var(--txt3);
-}
+.ci-icon{font-size:0.9rem;}
+.contact-org-label{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--txt3);}
 
 /* ── BUTTONS ───────────────────────────────────────────── */
-.btn-primary{
-  font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;
-  background:var(--gold);color:var(--bg);border:none;
-  padding:0.85rem 2rem;border-radius:3px;cursor:pointer;font-weight:600;
-  transition:all 0.2s cubic-bezier(0.16,1,0.3,1);
-}
+.btn-primary{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;background:var(--gold);color:var(--bg);border:none;padding:0.85rem 2rem;border-radius:3px;cursor:pointer;font-weight:600;transition:all 0.2s cubic-bezier(0.16,1,0.3,1);}
 .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:var(--shadow-gold);}
-.btn-secondary{
-  font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;
-  background:transparent;color:var(--txt);border:1px solid var(--border);
-  padding:0.85rem 2rem;border-radius:3px;cursor:pointer;
-  transition:all 0.2s;
-}
+.btn-secondary{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;background:transparent;color:var(--txt);border:1px solid var(--border);padding:0.85rem 2rem;border-radius:3px;cursor:pointer;transition:all 0.2s;}
 .btn-secondary:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
-.btn-sm{
-  font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;
-  background:var(--gold-glow);color:var(--gold);border:1px solid var(--border-gold);
-  padding:0.35rem 0.8rem;border-radius:3px;cursor:pointer;
-  transition:all 0.2s;white-space:nowrap;
-}
+.btn-sm{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;background:var(--gold-glow);color:var(--gold);border:1px solid var(--border-gold);padding:0.35rem 0.8rem;border-radius:3px;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
 .btn-sm:hover{background:rgba(201,168,76,0.2);}
 .btn-danger{background:rgba(224,60,60,0.1);color:var(--red);border-color:rgba(224,60,60,0.3);}
 .btn-danger:hover{background:rgba(224,60,60,0.2);}
 .btn-green{background:rgba(26,122,60,0.15);color:#4ecb71;border-color:rgba(26,122,60,0.4);}
 .btn-green:hover{background:rgba(26,122,60,0.25);}
-.btn-wa{
-  font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;
-  background:rgba(37,211,102,0.12);color:#25d366;border:1px solid rgba(37,211,102,0.3);
-  padding:0.85rem 2rem;border-radius:3px;cursor:pointer;
-  transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;
-}
+.btn-wa{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;background:rgba(37,211,102,0.12);color:#25d366;border:1px solid rgba(37,211,102,0.3);padding:0.85rem 2rem;border-radius:3px;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;}
 .btn-wa:hover{background:rgba(37,211,102,0.2);transform:translateY(-2px);}
 .btn-full{width:100%;margin-top:0.5rem;}
 
 /* ── SECTION ───────────────────────────────────────────── */
 .section{max-width:1200px;margin:0 auto;padding:4rem 2rem;}
-.section-header{
-  display:flex;align-items:baseline;gap:1.5rem;
-  margin-bottom:2.5rem;padding-bottom:1.25rem;position:relative;
-}
+.section-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:2.5rem;padding-bottom:1.25rem;position:relative;}
 .section-header::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--border);}
 .section-header::after{content:'';position:absolute;bottom:0;left:0;width:48px;height:2px;background:var(--gold);border-radius:1px;}
 .section-title{font-family:var(--font-display);font-size:2.4rem;letter-spacing:0.05em;}
@@ -257,36 +116,18 @@ nav{
 
 /* ── FORMS ─────────────────────────────────────────────── */
 .form-group{margin-bottom:1.25rem;}
-label{
-  display:block;font-family:var(--font-mono);font-size:0.62rem;
-  letter-spacing:0.12em;text-transform:uppercase;color:var(--txt2);margin-bottom:0.5rem;
-}
-input[type=text],input[type=tel],input[type=password],input[type=number],input[type=url],select,textarea{
-  width:100%;background:var(--bg3);border:1px solid var(--border);
-  border-radius:var(--radius);color:var(--txt);
-  padding:0.75rem 1rem;font-family:var(--font-body);font-size:0.9rem;
-  outline:none;transition:border-color 0.2s,box-shadow 0.2s;appearance:none;
-}
-input:focus,select:focus,textarea:focus{
-  border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-glow);
-}
+label{display:block;font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--txt2);margin-bottom:0.5rem;}
+input[type=text],input[type=tel],input[type=password],input[type=number],input[type=url],select,textarea{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);color:var(--txt);padding:0.75rem 1rem;font-family:var(--font-body);font-size:0.9rem;outline:none;transition:border-color 0.2s,box-shadow 0.2s;appearance:none;}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-glow);}
 select option{background:var(--bg3);color:var(--txt);}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.form-note{
-  font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;
-  color:var(--txt3);margin-top:0.75rem;text-align:center;
-}
+.form-note{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;color:var(--txt3);margin-top:0.75rem;text-align:center;}
 .form-note.warn{color:rgba(224,140,60,0.8);}
-.form-divider{
-  height:1px;background:var(--border);margin:2rem 0;
-}
+.form-divider{height:1px;background:var(--border);margin:2rem 0;}
 
 /* ── PLAYER CARDS ──────────────────────────────────────── */
 .players-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1rem;}
-.player-card{
-  background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-lg);
-  overflow:hidden;transition:all 0.25s cubic-bezier(0.16,1,0.3,1);cursor:default;position:relative;
-}
+.player-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.25s cubic-bezier(0.16,1,0.3,1);cursor:default;position:relative;}
 .player-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--border-gold);}
 .card-strip{height:3px;}
 .strip-GK{background:linear-gradient(90deg,#ffa500,#ffcc55);}
@@ -295,87 +136,58 @@ select option{background:var(--bg3);color:var(--txt);}
 .strip-FWD{background:linear-gradient(90deg,#e03c3c,#f57070);}
 .strip-pending{background:var(--border);}
 .card-top{padding:1.25rem 1.25rem 0.75rem;position:relative;}
-.card-pos{
-  position:absolute;top:1rem;right:1rem;
-  font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.1em;
-  padding:0.2rem 0.5rem;border-radius:2px;
-}
+.card-pos{position:absolute;top:1rem;right:1rem;font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.1em;padding:0.2rem 0.5rem;border-radius:2px;}
 .pos-GK{background:rgba(255,165,0,0.15);color:#ffa500;border:1px solid rgba(255,165,0,0.3);}
 .pos-DEF{background:rgba(60,125,224,0.15);color:#6fa8f5;border:1px solid rgba(60,125,224,0.3);}
 .pos-MID{background:rgba(26,122,60,0.2);color:#4ecb71;border:1px solid rgba(26,122,60,0.4);}
 .pos-FWD{background:rgba(224,60,60,0.15);color:#f57070;border:1px solid rgba(224,60,60,0.3);}
-.card-avatar{
-  width:50px;height:50px;border-radius:50%;
-  background:linear-gradient(135deg,var(--bg4),var(--bg3));
-  border:2px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-display);font-size:1.35rem;color:var(--gold);
-  margin-bottom:0.75rem;
-}
+.card-avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--bg4),var(--bg3));border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.35rem;color:var(--gold);margin-bottom:0.75rem;}
 .card-name{font-weight:600;font-size:0.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .card-price-row{display:flex;align-items:center;justify-content:space-between;margin-top:0.35rem;}
 .card-price{font-family:var(--font-display);font-size:1.5rem;color:var(--gold);line-height:1;}
 .card-price-cr{font-family:var(--font-mono);font-size:0.6rem;color:rgba(201,168,76,0.5);}
 .card-price-pending{font-family:var(--font-mono);font-size:0.58rem;color:var(--txt3);letter-spacing:0.08em;}
-.tier-badge{
-  display:inline-flex;align-items:center;gap:0.25rem;
-  font-family:var(--font-mono);font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;
-  padding:0.15rem 0.45rem;border-radius:2px;margin-top:0.3rem;
-}
+.tier-badge{display:inline-flex;align-items:center;gap:0.25rem;font-family:var(--font-mono);font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.15rem 0.45rem;border-radius:2px;margin-top:0.3rem;}
 .tier-elite{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.35);}
 .tier-solid{background:rgba(60,125,224,0.12);color:#6fa8f5;border:1px solid rgba(60,125,224,0.3);}
 .tier-budget{background:rgba(255,255,255,0.05);color:var(--txt3);border:1px solid var(--border);}
 .card-divider{height:1px;background:var(--border);margin:0 1.25rem;}
 .card-pending-body{padding:1rem 1.25rem 1.25rem;text-align:center;}
-.pending-label{
-  font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--txt3);background:rgba(255,255,255,0.03);
-  padding:0.5rem;border-radius:4px;border:1px dashed var(--border);
+.pending-label{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--txt3);background:rgba(255,255,255,0.03);padding:0.5rem;border-radius:4px;border:1px dashed var(--border);}
+.card-sold-tag{position:absolute;top:0;left:0;right:0;z-index:2;background:rgba(26,122,60,0.88);backdrop-filter:blur(4px);text-align:center;padding:0.25rem;font-family:var(--font-mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;}
+
+/* ── PRICING INFO BOX ──────────────────────────────────── */
+.pricing-explainer{
+  background:rgba(201,168,76,0.04);border:1px solid var(--border-gold);
+  border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin-bottom:2rem;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;
 }
-.card-sold-tag{
-  position:absolute;top:0;left:0;right:0;z-index:2;
-  background:rgba(26,122,60,0.88);backdrop-filter:blur(4px);
-  text-align:center;padding:0.25rem;
-  font-family:var(--font-mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;
-}
+.pe-item{display:flex;align-items:center;gap:0.75rem;}
+.pe-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.pe-txt{}
+.pe-label{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt3);}
+.pe-val{font-family:var(--font-display);font-size:1rem;color:var(--txt);}
 
 /* ── FILTER BAR ────────────────────────────────────────── */
 .filter-bar{display:flex;gap:0.4rem;margin-bottom:2rem;flex-wrap:wrap;}
-.filter-btn{
-  font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;
-  padding:0.38rem 0.85rem;border-radius:3px;border:1px solid var(--border);
-  background:transparent;color:var(--txt3);cursor:pointer;transition:all 0.2s;
-}
+.filter-btn{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.38rem 0.85rem;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--txt3);cursor:pointer;transition:all 0.2s;}
 .filter-btn.active,.filter-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-glow);}
 
 /* ── AUCTION / TIERS ───────────────────────────────────── */
 .tier-section{margin-bottom:3rem;}
-.tier-header{
-  display:flex;align-items:center;gap:1rem;
-  padding:1rem 1.25rem;border-radius:var(--radius);
-  cursor:pointer;user-select:none;
-  border:1px solid var(--border);background:var(--bg2);
-  transition:all 0.2s;margin-bottom:1rem;
-}
+.tier-header{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border-radius:var(--radius);cursor:pointer;user-select:none;border:1px solid var(--border);background:var(--bg2);transition:all 0.2s;margin-bottom:1rem;}
 .tier-header:hover{border-color:var(--border-gold);}
 .tier-header-left{display:flex;align-items:center;gap:1rem;flex:1;}
 .tier-crown{font-size:1.4rem;}
-.tier-header-info{}
 .tier-name{font-family:var(--font-display);font-size:1.5rem;letter-spacing:0.05em;}
 .tier-sub{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;color:var(--txt3);margin-top:0.1rem;}
-.tier-count-badge{
-  font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;
-  padding:0.25rem 0.65rem;border-radius:2px;
-}
+.tier-count-badge{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;padding:0.25rem 0.65rem;border-radius:2px;}
 .tier-chevron{font-size:1rem;color:var(--txt3);transition:transform 0.3s;margin-left:auto;}
 .tier-header.open .tier-chevron{transform:rotate(180deg);}
 .tier-body{display:none;}
 .tier-body.open{display:block;animation:fadeUp 0.25s ease both;}
-
-/* Tier colour themes */
 .tier-elite-hdr{border-color:rgba(201,168,76,0.25);background:linear-gradient(90deg,rgba(201,168,76,0.06),var(--bg2));}
 .tier-solid-hdr{border-color:rgba(60,125,224,0.2);background:linear-gradient(90deg,rgba(60,125,224,0.06),var(--bg2));}
-.tier-budget-hdr{border-color:rgba(255,255,255,0.08);}
 .tier-elite-hdr .tier-name{color:var(--gold);}
 .tier-solid-hdr .tier-name{color:#6fa8f5;}
 .tier-elite-badge{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
@@ -383,21 +195,13 @@ select option{background:var(--bg3);color:var(--txt);}
 .tier-budget-badge{background:rgba(255,255,255,0.05);color:var(--txt2);border:1px solid var(--border);}
 
 /* ── CAPTAIN CARDS ─────────────────────────────────────── */
-.captains-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-bottom:3rem;}
-.captain-card{
-  background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-lg);
-  overflow:hidden;transition:all 0.25s;
-}
+.captains-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem;margin-bottom:3rem;}
+.captain-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.25s;}
 .captain-card:hover{border-color:var(--border-gold);transform:translateY(-2px);box-shadow:var(--shadow);}
 .cap-strip{height:4px;background:linear-gradient(90deg,var(--green-dark),var(--green),var(--gold));}
 .cap-inner{padding:1.5rem;}
 .cap-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;}
-.cap-avatar{
-  width:44px;height:44px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--green-dark),var(--green));
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-display);font-size:1.15rem;color:var(--gold);
-}
+.cap-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.15rem;color:var(--gold);}
 .cap-name{font-weight:600;font-size:1rem;}
 .cap-team{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.1em;color:var(--txt3);margin-top:0.1rem;}
 .budget-lbl{display:flex;justify-content:space-between;margin-bottom:0.4rem;}
@@ -409,85 +213,75 @@ select option{background:var(--bg3);color:var(--txt);}
 .budget-fill.danger{background:linear-gradient(90deg,var(--red),#f57070);}
 .squad-meta{font-family:var(--font-mono);font-size:0.58rem;color:var(--txt3);margin-top:0.5rem;letter-spacing:0.07em;}
 
-/* ── SQUAD VIEW (7-aside pitch) ────────────────────────── */
-.pitch-view{
-  background:linear-gradient(180deg,rgba(26,122,60,0.12) 0%,rgba(15,79,37,0.08) 100%);
-  border:1px solid rgba(26,122,60,0.2);border-radius:var(--radius-lg);
-  padding:1.5rem 1rem 1rem;margin-top:1rem;position:relative;overflow:hidden;
-}
-.pitch-view::before{
-  content:'';position:absolute;inset:0;opacity:0.04;
-  background-image:
-    repeating-linear-gradient(0deg,rgba(255,255,255,0.8) 0,rgba(255,255,255,0.8) 1px,transparent 1px,transparent 40px),
-    repeating-linear-gradient(90deg,rgba(255,255,255,0.8) 0,rgba(255,255,255,0.8) 1px,transparent 1px,transparent 40px);
-}
-.pitch-title{
-  font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--txt3);text-align:center;margin-bottom:1rem;
-}
+/* ── SQUAD NEEDS ───────────────────────────────────────── */
+.squad-needs{display:flex;gap:0.35rem;flex-wrap:wrap;margin-top:0.75rem;}
+.need-badge{font-family:var(--font-mono);font-size:0.52rem;letter-spacing:0.08em;padding:0.18rem 0.5rem;border-radius:2px;display:flex;align-items:center;gap:0.3rem;}
+.need-GK{background:rgba(255,165,0,0.1);color:#ffa500;border:1px solid rgba(255,165,0,0.25);}
+.need-DEF{background:rgba(60,125,224,0.1);color:#6fa8f5;border:1px solid rgba(60,125,224,0.25);}
+.need-MID{background:rgba(26,122,60,0.12);color:#4ecb71;border:1px solid rgba(26,122,60,0.3);}
+.need-FWD{background:rgba(224,60,60,0.1);color:#f57070;border:1px solid rgba(224,60,60,0.25);}
+
+/* ── PITCH VIEW ────────────────────────────────────────── */
+.pitch-view{background:linear-gradient(180deg,rgba(26,122,60,0.12) 0%,rgba(15,79,37,0.08) 100%);border:1px solid rgba(26,122,60,0.2);border-radius:var(--radius-lg);padding:1.5rem 1rem 1rem;margin-top:1rem;position:relative;overflow:hidden;}
+.pitch-view::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,0.8) 0,rgba(255,255,255,0.8) 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,rgba(255,255,255,0.8) 0,rgba(255,255,255,0.8) 1px,transparent 1px,transparent 40px);}
+.pitch-title{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--txt3);text-align:center;margin-bottom:1rem;}
 .pitch-row{display:flex;justify-content:center;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap;}
-.pitch-player{
-  display:flex;flex-direction:column;align-items:center;gap:0.25rem;
-  min-width:60px;max-width:70px;
-}
-.pitch-player-circle{
-  width:42px;height:42px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-display);font-size:0.95rem;
-  border:2px solid rgba(255,255,255,0.15);
-  background:var(--bg3);color:var(--txt);
-  position:relative;
-}
-.pitch-player-name{
-  font-family:var(--font-mono);font-size:0.48rem;letter-spacing:0.06em;text-transform:uppercase;
-  color:var(--txt2);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;
-}
+.pitch-player{display:flex;flex-direction:column;align-items:center;gap:0.25rem;min-width:60px;max-width:70px;}
+.pitch-player-circle{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:0.95rem;border:2px solid rgba(255,255,255,0.15);background:var(--bg3);color:var(--txt);position:relative;}
+.pitch-player-name{font-family:var(--font-mono);font-size:0.48rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--txt2);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;}
 .pitch-empty .pitch-player-circle{border-style:dashed;border-color:rgba(255,255,255,0.08);background:transparent;}
-.pitch-subs-row{
-  border-top:1px solid var(--border);margin-top:0.75rem;padding-top:0.75rem;
-  display:flex;justify-content:center;gap:0.5rem;flex-wrap:wrap;
-}
-.pitch-subs-label{
-  font-family:var(--font-mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--txt3);text-align:center;width:100%;margin-bottom:0.4rem;
-}
+.pitch-subs-row{border-top:1px solid var(--border);margin-top:0.75rem;padding-top:0.75rem;display:flex;justify-content:center;gap:0.5rem;flex-wrap:wrap;}
+.pitch-subs-label{font-family:var(--font-mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt3);text-align:center;width:100%;margin-bottom:0.4rem;}
 
 /* ── REGISTER PAGE ─────────────────────────────────────── */
-.reg-hero{
-  background:linear-gradient(180deg,rgba(26,122,60,0.07) 0%,transparent 100%);
-  border-bottom:1px solid var(--border);
-  padding:3rem 2rem 2rem;text-align:center;
-}
-.reg-hero-title{
-  font-family:var(--font-display);font-size:clamp(2.5rem,8vw,5rem);
-  letter-spacing:0.05em;line-height:1;
-}
+.reg-hero{background:linear-gradient(180deg,rgba(26,122,60,0.07) 0%,transparent 100%);border-bottom:1px solid var(--border);padding:3rem 2rem 2rem;text-align:center;}
+.reg-hero-title{font-family:var(--font-display);font-size:clamp(2.5rem,8vw,5rem);letter-spacing:0.05em;line-height:1;}
 .reg-hero-sub{color:var(--txt2);font-size:0.85rem;margin-top:0.75rem;}
 .reg-wrap{max-width:580px;margin:0 auto;padding:2.5rem 2rem 5rem;}
-
-/* Self-rating slider */
 .self-rating-wrap{margin-bottom:1.25rem;}
 .self-rating-track{display:flex;align-items:center;gap:1rem;margin-top:0.5rem;}
-.self-rating-track input[type=range]{
-  flex:1;appearance:auto;background:transparent;
-  padding:0;height:auto;border:none;box-shadow:none;
-}
+.self-rating-track input[type=range]{flex:1;appearance:auto;background:transparent;padding:0;height:auto;border:none;box-shadow:none;}
 .self-rating-track input[type=range]:focus{box-shadow:none;border:none;}
-.self-rating-val{
-  font-family:var(--font-display);font-size:2rem;color:var(--gold);
-  min-width:32px;text-align:center;line-height:1;
-}
-.self-rating-desc{
-  font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;
-  color:var(--txt3);margin-top:0.25rem;
-}
-.warn-box{
-  background:rgba(224,140,60,0.08);border:1px solid rgba(224,140,60,0.3);
-  border-radius:var(--radius);padding:0.85rem 1rem;margin-bottom:1.25rem;
-  display:flex;gap:0.75rem;align-items:flex-start;
-}
+.self-rating-val{font-family:var(--font-display);font-size:2rem;color:var(--gold);min-width:32px;text-align:center;line-height:1;}
+.self-rating-desc{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;color:var(--txt3);margin-top:0.25rem;}
+.warn-box{background:rgba(224,140,60,0.08);border:1px solid rgba(224,140,60,0.3);border-radius:var(--radius);padding:0.85rem 1rem;margin-bottom:1.25rem;display:flex;gap:0.75rem;align-items:flex-start;}
 .warn-box-icon{font-size:1rem;flex-shrink:0;margin-top:0.05rem;}
 .warn-box-txt{font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.07em;color:rgba(224,140,60,0.9);line-height:1.5;}
+
+/* ── TEAMS PAGE ────────────────────────────────────────── */
+.teams-search-wrap{max-width:480px;margin:0 auto 3rem;display:flex;gap:0.75rem;align-items:flex-end;}
+.teams-search-wrap .form-group{flex:1;margin-bottom:0;}
+.teams-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;}
+.team-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.25s;}
+.team-card:hover{border-color:var(--border-gold);box-shadow:var(--shadow);}
+.team-banner{height:6px;}
+.team-banner-inner{height:100%;background:linear-gradient(90deg,var(--green-dark),var(--green),var(--gold));}
+.team-info{padding:1.5rem;}
+.team-name-row{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;}
+.team-crest{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.25rem;color:var(--gold);flex-shrink:0;}
+.team-fullname{font-family:var(--font-display);font-size:1.5rem;letter-spacing:0.05em;color:var(--txt);}
+.team-captain-name{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;color:var(--txt3);}
+.team-roster{border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;}
+.roster-pos-group{margin-bottom:0.75rem;}
+.roster-pos-label{font-family:var(--font-mono);font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--txt3);margin-bottom:0.35rem;}
+.roster-player-row{display:flex;align-items:center;justify-content:space-between;padding:0.35rem 0.6rem;border-radius:4px;transition:background 0.15s;margin-bottom:0.2rem;}
+.roster-player-row:hover{background:rgba(255,255,255,0.03);}
+.roster-player-row.highlight{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);}
+.roster-player-name{font-size:0.85rem;font-weight:500;}
+.roster-player-price{font-family:var(--font-mono);font-size:0.58rem;color:var(--gold);}
+.roster-player-you{font-family:var(--font-mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.12);padding:0.15rem 0.4rem;border-radius:2px;border:1px solid rgba(201,168,76,0.3);}
+.team-empty{text-align:center;padding:2rem;color:var(--txt3);font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;}
+.player-search-result{
+  background:var(--bg2);border:1px solid var(--border-gold);
+  border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:2rem;
+  display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;
+}
+.psr-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--green-dark),var(--green));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.4rem;color:var(--gold);flex-shrink:0;}
+.psr-info{flex:1;}
+.psr-name{font-family:var(--font-display);font-size:1.5rem;letter-spacing:0.04em;}
+.psr-team{color:var(--gold);font-size:0.9rem;margin-top:0.15rem;}
+.psr-pos{font-family:var(--font-mono);font-size:0.6rem;color:var(--txt3);letter-spacing:0.1em;margin-top:0.1rem;}
+.psr-not-found{font-family:var(--font-mono);font-size:0.68rem;color:var(--txt3);letter-spacing:0.08em;text-align:center;padding:1.5rem;background:var(--bg2);border:1px dashed var(--border);border-radius:var(--radius);}
 
 /* ── ADMIN ─────────────────────────────────────────────── */
 .login-wrap{max-width:360px;margin:0 auto;padding:5rem 2rem;}
@@ -496,31 +290,15 @@ select option{background:var(--bg3);color:var(--txt);}
 .admin-wrap{max-width:920px;margin:0 auto;padding:3rem 2rem;}
 .admin-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
 .admin-title{font-family:var(--font-display);font-size:2rem;letter-spacing:0.05em;}
-.admin-badge{
-  font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--gold);background:var(--gold-glow);border:1px solid var(--border-gold);
-  padding:0.3rem 0.75rem;border-radius:2px;
-}
-.admin-tabs{display:flex;gap:0.15rem;margin-bottom:2rem;border-bottom:1px solid var(--border);padding-bottom:0;flex-wrap:wrap;}
-.admin-tab{
-  font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;
-  padding:0.6rem 1rem;border:none;background:none;color:var(--txt3);cursor:pointer;
-  border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;
-}
+.admin-badge{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);background:var(--gold-glow);border:1px solid var(--border-gold);padding:0.3rem 0.75rem;border-radius:2px;}
+.admin-tabs{display:flex;gap:0.15rem;margin-bottom:2rem;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.admin-tab{font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.6rem 1rem;border:none;background:none;color:var(--txt3);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;}
 .admin-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
 .admin-panel{display:none;}
 .admin-panel.active{display:block;}
-.admin-row{
-  display:flex;align-items:center;gap:0.75rem;
-  padding:0.9rem 1.1rem;background:var(--bg3);border:1px solid var(--border);
-  border-radius:var(--radius);margin-bottom:0.5rem;transition:border-color 0.2s;
-  position:relative;overflow:hidden;flex-wrap:wrap;
-}
+.admin-row{display:flex;align-items:center;gap:0.75rem;padding:0.9rem 1.1rem;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:0.5rem;transition:border-color 0.2s;position:relative;overflow:hidden;flex-wrap:wrap;}
 .admin-row:hover{border-color:rgba(255,255,255,0.1);}
-.admin-row::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
-  background:var(--gold);transform:scaleY(0);transition:transform 0.2s;border-radius:0 2px 2px 0;
-}
+.admin-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transition:transform 0.2s;border-radius:0 2px 2px 0;}
 .admin-row:hover::before{transform:scaleY(1);}
 .arow-name{flex:1;font-weight:500;font-size:0.88rem;min-width:120px;}
 .arow-pos{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.08em;padding:0.2rem 0.45rem;border-radius:2px;}
@@ -528,39 +306,32 @@ select option{background:var(--bg3);color:var(--txt);}
 .arow-price.unrated{font-family:var(--font-mono);font-size:0.58rem;color:var(--txt3);letter-spacing:0.08em;}
 .arow-self{font-family:var(--font-mono);font-size:0.58rem;color:var(--txt2);letter-spacing:0.07em;}
 
+/* Pricing guide in admin */
+.pricing-guide{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.75rem;margin-bottom:1.5rem;}
+.pg-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;}
+.pg-pos{font-family:var(--font-display);font-size:1.2rem;letter-spacing:0.06em;margin-bottom:0.5rem;}
+.pg-row{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.07em;color:var(--txt3);margin-bottom:0.2rem;}
+.pg-row span:last-child{color:var(--txt2);}
+
 /* ── MODAL ─────────────────────────────────────────────── */
-.modal-overlay{
-  display:none;position:fixed;inset:0;
-  background:rgba(0,0,0,0.8);z-index:500;
-  align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(4px);
-}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:500;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(4px);}
 .modal-overlay.open{display:flex;}
 .modal-overlay.open .modal{animation:modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1) both;}
 @keyframes modalIn{from{opacity:0;transform:scale(0.9) translateY(12px);}to{opacity:1;transform:scale(1) translateY(0);}}
-.modal{
-  background:var(--bg2);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-lg);
-  padding:2rem;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;
-}
-.modal-title{font-family:var(--font-display);font-size:1.7rem;letter-spacing:0.05em;margin-bottom:1.5rem;color:var(--gold);}
+.modal{background:var(--bg2);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:2rem;width:100%;max-width:500px;max-height:90vh;overflow-y:auto;}
+.modal-title{font-family:var(--font-display);font-size:1.7rem;letter-spacing:0.05em;margin-bottom:0.5rem;color:var(--gold);}
+.modal-sub{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;color:var(--txt3);margin-bottom:1.5rem;}
 .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.25rem;}
 .stat-ig label{font-size:0.6rem;margin-bottom:0.3rem;}
 .stat-ig input{padding:0.5rem 0.75rem;font-size:0.85rem;}
-.price-preview{
-  background:var(--gold-glow);border:1px solid var(--border-gold);border-radius:var(--radius);
-  padding:1rem;text-align:center;margin-bottom:1.25rem;
-}
+.price-preview{background:var(--gold-glow);border:1px solid var(--border-gold);border-radius:var(--radius);padding:1rem;text-align:center;margin-bottom:1rem;}
 .pp-label{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--txt3);margin-bottom:0.25rem;}
 .pp-val{font-family:var(--font-display);font-size:2.4rem;color:var(--gold);line-height:1;}
+.pp-range{font-family:var(--font-mono);font-size:0.58rem;color:var(--txt3);margin-top:0.25rem;}
 .modal-actions{display:flex;gap:0.75rem;justify-content:flex-end;}
 
 /* ── TOAST ─────────────────────────────────────────────── */
-.toast{
-  position:fixed;bottom:2rem;right:2rem;
-  background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);
-  padding:0.85rem 1.25rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.07em;
-  color:var(--txt);z-index:9999;transform:translateY(100px);opacity:0;
-  transition:all 0.3s ease;max-width:300px;
-}
+.toast{position:fixed;bottom:2rem;right:2rem;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:0.85rem 1.25rem;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.07em;color:var(--txt);z-index:9999;transform:translateY(100px);opacity:0;transition:all 0.3s ease;max-width:300px;}
 .toast.show{transform:translateY(0);opacity:1;}
 .toast.success{border-color:rgba(26,122,60,0.5);color:#4ecb71;}
 .toast.error{border-color:rgba(224,60,60,0.5);color:#f57070;}
@@ -570,18 +341,15 @@ select option{background:var(--bg3);color:var(--txt);}
 .empty-icon{font-size:2.5rem;margin-bottom:1rem;opacity:0.3;}
 .empty-text{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;}
 
-/* ── REVEAL ANIMATIONS ─────────────────────────────────── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-
 /* ── RESPONSIVE ────────────────────────────────────────── */
 @media(max-width:768px){
-  .nav-links{display:none;position:fixed;top:90px;left:0;right:0;background:var(--bg2);padding:1rem;flex-direction:column;border-bottom:1px solid var(--border);gap:0;}
+  .nav-links{display:none;position:fixed;top:90px;left:0;right:0;background:var(--bg2);padding:1rem;flex-direction:column;border-bottom:1px solid var(--border);gap:0;z-index:198;}
   .nav-links.open{display:flex;}
   .nav-links a{padding:0.75rem 1rem;border-radius:var(--radius);font-size:0.75rem;}
   .hamburger{display:flex;}
   .form-row{grid-template-columns:1fr;}
   .captains-grid{grid-template-columns:1fr;}
+  .teams-grid{grid-template-columns:1fr;}
   .stats-grid{grid-template-columns:1fr;}
   .hstat{padding:1rem 1.25rem;}
   .admin-row{gap:0.5rem;}
@@ -589,6 +357,7 @@ select option{background:var(--bg3);color:var(--txt);}
   .modal{padding:1.5rem;}
   .contact-strip{flex-direction:column;gap:0.75rem;}
   .hero-cta{flex-direction:column;align-items:center;}
+  .teams-search-wrap{flex-direction:column;}
 }
 @media(max-width:480px){
   .section{padding:3rem 1.25rem;}
@@ -608,14 +377,14 @@ select option{background:var(--bg3);color:var(--txt);}
     <span class="ticker-item" id="tick-caps">0 Captains</span><span class="ticker-sep">·</span>
     <span class="ticker-item">100 Credits Per Squad</span><span class="ticker-sep">·</span>
     <span class="ticker-item">10 Players &middot; 7-A-Side</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Season 1</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Season 1 — Register Now</span><span class="ticker-sep">·</span>
     <span class="ticker-item">&#9917; Malelane Draft League</span><span class="ticker-sep">·</span>
     <span class="ticker-item" id="tick-players2">0 Players Registered</span><span class="ticker-sep">·</span>
     <span class="ticker-item" id="tick-rated2">0 Rated</span><span class="ticker-sep">·</span>
     <span class="ticker-item" id="tick-caps2">0 Captains</span><span class="ticker-sep">·</span>
     <span class="ticker-item">100 Credits Per Squad</span><span class="ticker-sep">·</span>
     <span class="ticker-item">10 Players &middot; 7-A-Side</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Season 1</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Season 1 — Register Now</span><span class="ticker-sep">·</span>
   </div>
 </div>
 
@@ -626,6 +395,7 @@ select option{background:var(--bg3);color:var(--txt);}
     <li><a onclick="navigate('home')" id="nav-home" class="active">Home</a></li>
     <li><a onclick="navigate('players')" id="nav-players">Players</a></li>
     <li><a onclick="navigate('auction')" id="nav-auction">Auction</a></li>
+    <li><a onclick="navigate('teams')" id="nav-teams">Teams</a></li>
     <li><a onclick="navigate('register')" id="nav-register">Register</a></li>
     <li><a onclick="navigate('admin')" id="nav-admin">Admin</a></li>
   </ul>
@@ -636,7 +406,7 @@ select option{background:var(--bg3);color:var(--txt);}
 
 <div class="toast" id="toast"></div>
 
-<!-- ════════════════════════════════════════ HOME PAGE -->
+<!-- ════════════════ HOME PAGE -->
 <div class="page active" id="page-home">
   <div class="hero">
     <div class="hero-bg"></div>
@@ -653,6 +423,7 @@ select option{background:var(--bg3);color:var(--txt);}
       <p class="hero-sub">Register. Get Rated. Get Drafted. Dominate.</p>
       <div class="hero-cta">
         <button type="button" class="btn-primary" onclick="navigate('register')">Register as Player</button>
+        <button type="button" class="btn-secondary" onclick="navigate('teams')">Find My Team</button>
         <button type="button" class="btn-secondary" onclick="navigate('players')">View Player Pool</button>
       </div>
       <div class="hero-stats">
@@ -660,25 +431,20 @@ select option{background:var(--bg3);color:var(--txt);}
         <div class="hstat"><div class="hstat-num" id="stat-rated">0</div><div class="hstat-label">Rated</div></div>
         <div class="hstat"><div class="hstat-num" id="stat-captains">0</div><div class="hstat-label">Captains</div></div>
         <div class="hstat"><div class="hstat-num">100</div><div class="hstat-label">Credits</div></div>
+        <div class="hstat"><div class="hstat-num">10</div><div class="hstat-label">Per Squad</div></div>
         <div class="hstat"><div class="hstat-num">7</div><div class="hstat-label">A-Side</div></div>
       </div>
     </div>
     <div class="scroll-cue"><div class="scroll-txt">Scroll</div><div class="scroll-line"></div></div>
   </div>
-
-  <!-- Contact strip -->
   <div class="contact-strip">
     <div class="contact-org-label">Organiser</div>
-    <a class="contact-strip-item" href="https://wa.me/27780120351" target="_blank" rel="noopener">
-      <span class="ci-icon">&#128241;</span>+27 78 012 0351
-    </a>
-    <a class="contact-strip-item" href="mailto:1abdullahpatel0@gmail.com">
-      <span class="ci-icon">&#9993;</span>1abdullahpatel0@gmail.com
-    </a>
+    <a class="contact-strip-item" href="https://wa.me/27780120351" target="_blank" rel="noopener"><span class="ci-icon">&#128241;</span>+27 78 012 0351</a>
+    <a class="contact-strip-item" href="mailto:1abdullahpatel0@gmail.com"><span class="ci-icon">&#9993;</span>1abdullahpatel0@gmail.com</a>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════ PLAYERS PAGE -->
+<!-- ════════════════ PLAYERS PAGE -->
 <div class="page" id="page-players">
   <div class="section">
     <div class="section-header">
@@ -692,12 +458,13 @@ select option{background:var(--bg3);color:var(--txt);}
       <button class="filter-btn" onclick="filterPlayers('MID',this)">MID</button>
       <button class="filter-btn" onclick="filterPlayers('FWD',this)">FWD</button>
       <button class="filter-btn" onclick="filterPlayers('RATED',this)">Rated Only</button>
+      <button class="filter-btn" onclick="filterPlayers('AVAILABLE',this)">Available</button>
     </div>
     <div class="players-grid" id="players-grid"></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════ AUCTION PAGE -->
+<!-- ════════════════ AUCTION PAGE -->
 <div class="page" id="page-auction">
   <div class="section">
     <div class="section-header">
@@ -705,20 +472,41 @@ select option{background:var(--bg3);color:var(--txt);}
       <div class="section-count" id="auction-count">0 captains</div>
     </div>
     <div class="captains-grid" id="captains-grid"></div>
-
-    <!-- Tier sections -->
     <div id="tier-sections"></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════ REGISTER PAGE -->
+<!-- ════════════════ TEAMS PAGE -->
+<div class="page" id="page-teams">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Teams</div>
+      <div class="section-count" id="teams-count">Season 1</div>
+    </div>
+
+    <!-- Player lookup -->
+    <div style="background:rgba(201,168,76,0.04);border:1px solid var(--border-gold);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:2.5rem;">
+      <div style="font-family:var(--font-display);font-size:1.4rem;letter-spacing:0.05em;margin-bottom:0.25rem;">&#128269; Find My Team</div>
+      <div style="font-family:var(--font-mono);font-size:0.62rem;color:var(--txt3);letter-spacing:0.08em;margin-bottom:1rem;">Search your name to see which team drafted you</div>
+      <div class="teams-search-wrap">
+        <div class="form-group">
+          <input type="text" id="team-search" placeholder="Type your name..." oninput="searchPlayerTeam()">
+        </div>
+      </div>
+      <div id="team-search-result"></div>
+    </div>
+
+    <div class="teams-grid" id="teams-grid"></div>
+  </div>
+</div>
+
+<!-- ════════════════ REGISTER PAGE -->
 <div class="page" id="page-register">
   <div class="reg-hero">
     <div class="reg-hero-title">Register<br><span style="color:var(--gold);">to Play</span></div>
     <div class="reg-hero-sub">Enter the player pool. Get rated. Get drafted.</div>
   </div>
   <div class="reg-wrap">
-    <!-- Basic info -->
     <div class="form-group">
       <label>Full Name *</label>
       <input type="text" id="reg-name" placeholder="Your full name">
@@ -753,20 +541,15 @@ select option{background:var(--bg3);color:var(--txt);}
       <label>Anything else we should know?</label>
       <textarea id="reg-note" rows="3" placeholder="e.g. injury history, availability, preferred foot..." style="resize:vertical;"></textarea>
     </div>
-
     <div class="form-divider"></div>
-
-    <!-- Self rating -->
     <div style="margin-bottom:1.5rem;">
       <div style="font-family:var(--font-display);font-size:1.4rem;letter-spacing:0.05em;margin-bottom:0.25rem;">Rate Yourself</div>
       <div style="font-family:var(--font-mono);font-size:0.62rem;color:var(--txt3);letter-spacing:0.08em;">Optional — give us an idea of your ability</div>
     </div>
-
     <div class="warn-box">
       <div class="warn-box-icon">&#9888;&#65039;</div>
       <div class="warn-box-txt">Your self-rating is <strong>not your final price</strong>. It's just a guide for the organiser. Your official rating and auction price will be set by the organiser based on what they know about your ability.</div>
     </div>
-
     <div class="self-rating-wrap">
       <label>Overall Self-Rating (1–10)</label>
       <div class="self-rating-track">
@@ -775,26 +558,20 @@ select option{background:var(--bg3);color:var(--txt);}
       </div>
       <div class="self-rating-desc" id="self-rating-desc">Decent — holds their own in most games</div>
     </div>
-
     <div class="form-group">
       <label>Why do you rate yourself that? (optional)</label>
       <textarea id="self-rating-reason" rows="2" placeholder="e.g. I score most weeks, strong in the air, good engine..." style="resize:vertical;"></textarea>
     </div>
-
     <div class="form-divider"></div>
-
-    <!-- Video -->
     <div style="margin-bottom:1.5rem;">
       <div style="font-family:var(--font-display);font-size:1.4rem;letter-spacing:0.05em;margin-bottom:0.25rem;">Submit Footage</div>
       <div style="font-family:var(--font-mono);font-size:0.62rem;color:var(--txt3);letter-spacing:0.08em;">Help the organiser rate you accurately</div>
     </div>
-
     <div class="form-group">
       <label>Video Link (YouTube, Google Drive, etc.)</label>
       <input type="url" id="reg-video" placeholder="https://...">
     </div>
-    <div class="form-note" style="margin-bottom:1.5rem;text-align:left;">Paste a link to any footage of you playing — highlights, full match, training clips. The organiser will review this before assigning your price.</div>
-
+    <div class="form-note" style="margin-bottom:1.5rem;text-align:left;">Paste a link to any footage of you playing — highlights, full match, training clips.</div>
     <button type="button" class="btn-primary btn-full" onclick="registerPlayer()">Submit Registration</button>
     <div style="margin-top:1rem;">
       <button type="button" class="btn-wa btn-full" onclick="sendWAConfirmation()">&#128241; Send via WhatsApp Instead</button>
@@ -803,7 +580,7 @@ select option{background:var(--bg3);color:var(--txt);}
   </div>
 </div>
 
-<!-- ════════════════════════════════════════ ADMIN PAGE -->
+<!-- ════════════════ ADMIN PAGE -->
 <div class="page" id="page-admin">
   <div id="admin-login">
     <div class="login-wrap">
@@ -811,7 +588,7 @@ select option{background:var(--bg3);color:var(--txt);}
       <div class="login-sub">Organiser access only.</div>
       <div class="form-group">
         <label>Password</label>
-        <input type="password" id="admin-pw" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" onkeydown="if(event.key==='Enter')adminLogin()">
+        <input type="password" id="admin-pw" placeholder="••••••••" onkeydown="if(event.key==='Enter')adminLogin()">
       </div>
       <button type="button" class="btn-primary btn-full" onclick="adminLogin()">Login</button>
     </div>
@@ -826,11 +603,11 @@ select option{background:var(--bg3);color:var(--txt);}
           <button type="button" class="btn-sm btn-danger" onclick="adminLogout()">Logout</button>
         </div>
       </div>
-
       <div class="admin-tabs">
         <button class="admin-tab active" onclick="switchAdminTab('players',this)">Players</button>
         <button class="admin-tab" onclick="switchAdminTab('captains',this)">Captains</button>
         <button class="admin-tab" onclick="switchAdminTab('assign',this)">Assign</button>
+        <button class="admin-tab" onclick="switchAdminTab('pricing',this)">Pricing Guide</button>
         <button class="admin-tab" onclick="switchAdminTab('settings',this)">Settings</button>
       </div>
 
@@ -848,16 +625,31 @@ select option{background:var(--bg3);color:var(--txt);}
       </div>
 
       <div class="admin-panel" id="tab-assign">
-        <p style="color:var(--txt3);font-size:0.85rem;margin-bottom:1.5rem;">Assign rated players to a captain's squad during the auction.</p>
+        <p style="color:var(--txt3);font-size:0.85rem;margin-bottom:1rem;">Assign rated players to a captain's squad. Squad limits: 1 GK, 2 DEF, 3 MID, 1 FWD starters + 3 flexible subs = 10 total.</p>
+        <div id="assign-captain-needs" style="margin-bottom:1.5rem;"></div>
         <div class="form-row" style="margin-bottom:1rem;">
-          <div class="form-group"><label>Select Player</label><select id="assign-player"></select></div>
-          <div class="form-group"><label>Assign to Captain</label><select id="assign-captain"></select></div>
+          <div class="form-group"><label>Select Player</label><select id="assign-player" onchange="updateAssignPreview()"></select></div>
+          <div class="form-group"><label>Assign to Captain</label><select id="assign-captain" onchange="updateAssignPreview()"></select></div>
         </div>
         <div class="form-group" style="max-width:220px;">
           <label>Winning Bid (credits)</label>
-          <input type="number" id="assign-bid" placeholder="e.g. 8.5" min="0.5" max="100" step="0.5">
+          <input type="number" id="assign-bid" placeholder="e.g. 8.5" min="0.5" max="100" step="0.5" oninput="updateAssignPreview()">
         </div>
+        <div id="assign-preview" style="margin-bottom:1rem;"></div>
         <button type="button" class="btn-primary" onclick="assignPlayer()">Confirm Assignment</button>
+      </div>
+
+      <div class="admin-panel" id="tab-pricing">
+        <p style="color:var(--txt2);font-size:0.85rem;margin-bottom:1.5rem;">Price ranges by position. Each position has a unique formula — an elite FWD costs more than an elite GK, reflecting real auction scarcity and positional value.</p>
+        <div class="pricing-guide" id="pricing-guide-content"></div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-top:1rem;">
+          <div style="font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt3);margin-bottom:0.75rem;">Tier Thresholds</div>
+          <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+            <div><span style="color:var(--gold);font-family:var(--font-display);">Elite</span> <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--txt3);">≥ 10 cr</span></div>
+            <div><span style="color:#6fa8f5;font-family:var(--font-display);">Solid</span> <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--txt3);">6 – 9.5 cr</span></div>
+            <div><span style="color:var(--txt3);font-family:var(--font-display);">Budget</span> <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--txt3);">&lt; 6 cr</span></div>
+          </div>
+        </div>
       </div>
 
       <div class="admin-panel" id="tab-settings">
@@ -878,11 +670,13 @@ select option{background:var(--bg3);color:var(--txt);}
 <div class="modal-overlay" id="rating-modal" onclick="closeRatingModalOverlay(event)">
   <div class="modal" onclick="event.stopPropagation()">
     <div class="modal-title" id="rating-modal-title">Rate Player</div>
+    <div class="modal-sub" id="rating-modal-sub"></div>
     <input type="hidden" id="rating-player-id">
     <div id="stat-inputs" class="stats-grid"></div>
     <div class="price-preview">
       <div class="pp-label">Calculated Price</div>
-      <div class="pp-val" id="price-preview">&mdash;</div>
+      <div class="pp-val" id="price-preview">—</div>
+      <div class="pp-range" id="price-range-hint"></div>
     </div>
     <div class="modal-actions">
       <button type="button" class="btn-sm" onclick="closeRatingModal()">Cancel</button>
@@ -894,14 +688,14 @@ select option{background:var(--bg3);color:var(--txt);}
 <script>
 "use strict";
 
-/* ── CONSTANTS ─────────────────────────────────────────── */
-var ADMIN_PW_KEY = 'mdl_admin_pw';
-var DATA_KEY     = 'mdl_data';
-var DEFAULT_PW   = 'mdl2024';
-var ORGANISER_WA = '27780120351';
-var ORGANISER_EMAIL = '1abdullahpatel0@gmail.com';
+/* ════════════════════════════════════════
+   CONSTANTS & DATA
+════════════════════════════════════════ */
+var ADMIN_PW_KEY   = 'mdl_admin_pw';
+var DATA_KEY       = 'mdl_data';
+var DEFAULT_PW     = 'mdl2024';
+var ORGANISER_WA   = '27780120351';
 
-/* ── DATA ──────────────────────────────────────────────── */
 function getData(){
   try{ var r=localStorage.getItem(DATA_KEY); return r?JSON.parse(r):{players:[],captains:[]}; }
   catch(e){ return {players:[],captains:[]}; }
@@ -909,37 +703,65 @@ function getData(){
 function saveData(d){ localStorage.setItem(DATA_KEY,JSON.stringify(d)); }
 function getAdminPw(){ return localStorage.getItem(ADMIN_PW_KEY)||DEFAULT_PW; }
 
-/* ── PRICING ENGINE (FPL-style) ────────────────────────── */
+/* ════════════════════════════════════════
+   PRICING ENGINE — POSITION-DIFFERENTIATED
+
+   Each position has its own stat set, weights, base price, and price ceiling.
+   This means:
+   - An average FWD (wavg ~5) costs MORE than an average GK (wavg ~5)
+     because FWDs are more valuable in auction
+   - An elite FWD can reach 18 cr; an elite GK caps at 9 cr
+   - Position scarcity is baked into base+ceiling, not the stat score
+
+   Squad of 10 = 1GK + 2DEF + 3MID + 1FWD (starters) + 3 subs
+   Budget 100cr. Typical spend:
+     FWD: 8–18cr  DEF: 5–13cr  MID: 5–14cr  GK: 3.5–9cr
+════════════════════════════════════════ */
 var POS_STATS = {
-  GK:  ['Reflexes','Distribution','Aerial','Communication','Positioning'],
+  GK:  ['Reflexes','Shot Stopping','Distribution','Aerial','Positioning'],
   DEF: ['Tackling','Pace','Aerial','Passing','Positioning'],
   MID: ['Passing','Vision','Stamina','Dribbling','Shooting'],
-  FWD: ['Finishing','Pace','Dribbling','Hold-up Play','Movement'],
+  FWD: ['Finishing','Pace','Dribbling','Hold-up Play','Off the Ball'],
 };
 
 var STAT_WEIGHTS = {
-  GK:  {Reflexes:2,Distribution:1,Aerial:1,Communication:1,Positioning:1.5},
-  DEF: {Tackling:1.5,Pace:1.5,Aerial:1,Passing:1,Positioning:1},
-  MID: {Passing:1,Vision:1,Stamina:1,Dribbling:1.5,Shooting:2},
-  FWD: {Finishing:2.5,Pace:1.5,Dribbling:1.5,'Hold-up Play':1,Movement:1.5},
+  GK:  {'Reflexes':2.5,'Shot Stopping':2.5,'Distribution':0.75,'Aerial':0.75,'Positioning':1.5},
+  DEF: {'Tackling':2,'Pace':1.5,'Aerial':1.25,'Passing':0.75,'Positioning':1.5},
+  MID: {'Passing':1.5,'Vision':1.25,'Stamina':1,'Dribbling':1.5,'Shooting':1.75},
+  FWD: {'Finishing':3,'Pace':2,'Dribbling':1.5,'Hold-up Play':0.75,'Off the Ball':1.75},
 };
 
-var POS_BASE = {GK:3.5, DEF:4.5, MID:5.5, FWD:6.5};
-var POS_MAX  = {GK:10,  DEF:11,  MID:12.5,FWD:15};
+/*
+  Price formula:
+    wavg = weighted avg of stats (1–10)
+    price = BASE + ((wavg-1)/9) * (CEILING - BASE)
+    rounded to nearest 0.5
+
+  Position pricing philosophy:
+    GK   — base 3.5, ceiling 9.0   (cheap floor, moderate ceiling — 1 needed)
+    DEF  — base 4.0, ceiling 13.0  (decent range — 2 needed)
+    MID  — base 4.5, ceiling 14.0  (playmakers command premium — 3 needed)
+    FWD  — base 6.0, ceiling 18.0  (goals win games — 1 needed, high scarcity value)
+*/
+var POS_PRICE = {
+  GK:  {base:3.5, ceil:9.0},
+  DEF: {base:4.0, ceil:13.0},
+  MID: {base:4.5, ceil:14.0},
+  FWD: {base:6.0, ceil:18.0},
+};
 
 function calcPrice(stats, pos){
-  var weights = STAT_WEIGHTS[pos] || {};
+  var weights = STAT_WEIGHTS[pos]||{};
   var totalW=0, totalWV=0;
   Object.keys(stats).forEach(function(s){
-    var w = weights[s] || 1;
-    totalW  += w;
-    totalWV += (Number(stats[s])||0) * w;
+    var w=weights[s]||1;
+    totalW  +=w;
+    totalWV +=(Number(stats[s])||0)*w;
   });
   if(!totalW) return null;
-  var wavg = totalWV / totalW; // 1–10
-  var base = POS_BASE[pos] || 4;
-  var max  = POS_MAX[pos]  || 15;
-  var price = base + ((wavg-1)/9)*(max-base);
+  var wavg = totalWV/totalW; // 1–10
+  var pp   = POS_PRICE[pos]||{base:4,ceil:12};
+  var price = pp.base + ((wavg-1)/9)*(pp.ceil-pp.base);
   return Math.round(price*2)/2;
 }
 
@@ -950,7 +772,33 @@ function getTier(price){
   return 'BUDGET';
 }
 
-/* ── NAVIGATION ────────────────────────────────────────── */
+function posColor(pos){
+  return {GK:'#ffa500',DEF:'#6fa8f5',MID:'#4ecb71',FWD:'#f57070'}[pos]||'#fff';
+}
+
+/* ── Squad structure per team ───────────────────────────
+   Starter slots: 1GK, 2DEF, 3MID, 1FWD (7-a-side)
+   Remaining 3 slots = flexible subs (any position)
+   Total = 10 players
+────────────────────────────────────────────────────────*/
+var STARTER_SLOTS = {GK:1, DEF:2, MID:3, FWD:1};
+var SQUAD_MAX = 10;
+
+function getSquadNeeds(squad){
+  // Returns how many of each position still needed in starters
+  var counts = {GK:0,DEF:0,MID:0,FWD:0};
+  squad.forEach(function(p){ if(counts[p.pos]!==undefined) counts[p.pos]++; });
+  var needs = {};
+  Object.keys(STARTER_SLOTS).forEach(function(pos){
+    var need = STARTER_SLOTS[pos] - counts[pos];
+    if(need>0) needs[pos]=need;
+  });
+  return needs;
+}
+
+/* ════════════════════════════════════════
+   NAVIGATION
+════════════════════════════════════════ */
 function navigate(page){
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
   var t=document.getElementById('page-'+page);
@@ -963,24 +811,23 @@ function navigate(page){
   closeMobileNav();
   if(page==='players') renderPlayers();
   if(page==='auction') renderAuction();
+  if(page==='teams')   renderTeams();
   if(page==='home')    updateHeroStats();
   if(page==='admin'&&adminLoggedIn){ renderAdminPlayers(); renderAdminCaptains(); }
 }
 
 function toggleMobileNav(){
-  var nl=document.getElementById('nav-links');
-  nl.classList.toggle('open');
+  document.getElementById('nav-links').classList.toggle('open');
 }
 function closeMobileNav(){
   document.getElementById('nav-links').classList.remove('open');
 }
+document.addEventListener('keydown',function(e){if(e.key==='Escape') closeRatingModal();});
 
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape') closeRatingModal();
-});
-
-/* ── SELF RATING ────────────────────────────────────────── */
-var RATING_DESCS = [
+/* ════════════════════════════════════════
+   SELF RATING
+════════════════════════════════════════ */
+var RATING_DESCS=[
   '',
   'Struggling — still learning the game',
   'Beginner — occasional bright moments',
@@ -999,56 +846,50 @@ function updateSelfRatingDisplay(){
   document.getElementById('self-rating-val').textContent=v;
   document.getElementById('self-rating-desc').textContent=RATING_DESCS[v]||'';
 }
+function updateSelfRatingStats(){}
 
-function updateSelfRatingStats(){ /* future: show position-specific stat inputs */ }
-
-/* ── REGISTRATION ────────────────────────────────────────── */
+/* ════════════════════════════════════════
+   REGISTRATION
+════════════════════════════════════════ */
 function registerPlayer(){
-  var name   = document.getElementById('reg-name').value.trim();
-  var phone  = document.getElementById('reg-phone').value.trim();
-  var pos    = document.getElementById('reg-position').value;
-  var pos2   = document.getElementById('reg-position2').value;
-  var note   = document.getElementById('reg-note').value.trim();
-  var selfR  = document.getElementById('self-rating-slider').value;
-  var selfTxt= document.getElementById('self-rating-reason').value.trim();
-  var video  = document.getElementById('reg-video').value.trim();
+  var name  =document.getElementById('reg-name').value.trim();
+  var phone =document.getElementById('reg-phone').value.trim();
+  var pos   =document.getElementById('reg-position').value;
+  var pos2  =document.getElementById('reg-position2').value;
+  var note  =document.getElementById('reg-note').value.trim();
+  var selfR =document.getElementById('self-rating-slider').value;
+  var selfTxt=document.getElementById('self-rating-reason').value.trim();
+  var video =document.getElementById('reg-video').value.trim();
 
-  if(!name||!phone||!pos){ showToast('Please fill in all required fields.','error'); return; }
+  if(!name||!phone||!pos){showToast('Please fill in all required fields.','error');return;}
   var digits=phone.replace(/\D/g,'');
-  if(digits.length<10){ showToast('Please enter a valid phone number.','error'); return; }
+  if(digits.length<10){showToast('Please enter a valid phone number.','error');return;}
 
   var d=getData();
   if(d.players.find(function(p){return p.phone===phone;})){
-    showToast('A player with this number is already registered.','error'); return;
+    showToast('A player with this number is already registered.','error');return;
   }
 
   var player={
-    id: Date.now().toString()+Math.random().toString(36).substr(2,5),
-    name:name, phone:phone, pos:pos, pos2:pos2, note:note,
-    selfRating:Number(selfR), selfRatingReason:selfTxt, video:video,
-    stats:null, price:null, captainId:null, bidPrice:null,
+    id:Date.now().toString()+Math.random().toString(36).substr(2,5),
+    name:name,phone:phone,pos:pos,pos2:pos2,note:note,
+    selfRating:Number(selfR),selfRatingReason:selfTxt,video:video,
+    stats:null,price:null,captainId:null,bidPrice:null,
   };
   d.players.push(player);
   saveData(d);
-
-  // Send WhatsApp notification to organiser
   sendOrgNotification(player);
-
-  // Reset form
-  ['reg-name','reg-phone','reg-note','self-rating-reason','reg-video'].forEach(function(id){
-    document.getElementById(id).value='';
-  });
+  ['reg-name','reg-phone','reg-note','self-rating-reason','reg-video'].forEach(function(id){document.getElementById(id).value='';});
   document.getElementById('reg-position').value='';
   document.getElementById('reg-position2').value='';
   document.getElementById('self-rating-slider').value=5;
   updateSelfRatingDisplay();
-
   showToast(name+' registered! Organiser notified.','success');
   updateHeroStats();
 }
 
 function sendOrgNotification(player){
-  var msg = '🏆 *New MDL Registration*\n\n'
+  var msg='🏆 *New MDL Registration*\n\n'
     +'*Name:* '+player.name+'\n'
     +'*Phone:* '+player.phone+'\n'
     +'*Position:* '+player.pos+(player.pos2?' / '+player.pos2:'')+'\n'
@@ -1057,21 +898,19 @@ function sendOrgNotification(player){
     +(player.video?'*Video:* '+player.video+'\n':'')
     +(player.note?'*Notes:* '+player.note+'\n':'')
     +'\n_Malelane Draft League — Season 1_';
-  var url='https://wa.me/'+ORGANISER_WA+'?text='+encodeURIComponent(msg);
-  window.open(url,'_blank');
+  window.open('https://wa.me/27780120351?text='+encodeURIComponent(msg),'_blank');
 }
 
 function sendWAConfirmation(){
-  var name   = document.getElementById('reg-name').value.trim();
-  var phone  = document.getElementById('reg-phone').value.trim();
-  var pos    = document.getElementById('reg-position').value;
-  if(!name||!phone||!pos){ showToast('Fill in your name, number and position first.','error'); return; }
-  var selfR  = document.getElementById('self-rating-slider').value;
-  var selfTxt= document.getElementById('self-rating-reason').value.trim();
-  var video  = document.getElementById('reg-video').value.trim();
-  var note   = document.getElementById('reg-note').value.trim();
-
-  var msg = '🏆 *MDL Registration — '+name+'*\n\n'
+  var name  =document.getElementById('reg-name').value.trim();
+  var phone =document.getElementById('reg-phone').value.trim();
+  var pos   =document.getElementById('reg-position').value;
+  if(!name||!phone||!pos){showToast('Fill in your name, number and position first.','error');return;}
+  var selfR =document.getElementById('self-rating-slider').value;
+  var selfTxt=document.getElementById('self-rating-reason').value.trim();
+  var video =document.getElementById('reg-video').value.trim();
+  var note  =document.getElementById('reg-note').value.trim();
+  var msg='🏆 *MDL Registration — '+name+'*\n\n'
     +'*Position:* '+pos+'\n'
     +'*My Number:* '+phone+'\n'
     +'*Self-Rating:* '+selfR+'/10\n'
@@ -1079,12 +918,13 @@ function sendWAConfirmation(){
     +(video?'*Video:* '+video+'\n':'')
     +(note?'*Notes:* '+note+'\n':'')
     +'\n⚠️ _I understand my self-rating is not my final price._\n_Malelane Draft League — Season 1_';
-  var url='https://wa.me/'+ORGANISER_WA+'?text='+encodeURIComponent(msg);
-  window.open(url,'_blank');
+  window.open('https://wa.me/27780120351?text='+encodeURIComponent(msg),'_blank');
   showToast('WhatsApp opened — send the message to complete registration.','success');
 }
 
-/* ── PLAYERS PAGE ────────────────────────────────────────── */
+/* ════════════════════════════════════════
+   PLAYERS PAGE
+════════════════════════════════════════ */
 var currentFilter='ALL';
 function filterPlayers(f,btn){
   currentFilter=f;
@@ -1095,14 +935,14 @@ function filterPlayers(f,btn){
 
 function renderPlayers(){
   var d=getData();
-  var grid=document.getElementById('players-grid');
-  var countEl=document.getElementById('players-count');
   var players=d.players.slice();
-  if(currentFilter==='RATED') players=players.filter(function(p){return p.stats;});
-  else if(currentFilter!=='ALL') players=players.filter(function(p){return p.pos===currentFilter;});
-  countEl.textContent=players.length+' player'+(players.length!==1?'s':'');
+  if(currentFilter==='RATED')     players=players.filter(function(p){return p.stats;});
+  else if(currentFilter==='AVAILABLE') players=players.filter(function(p){return p.stats&&!p.captainId;});
+  else if(currentFilter!=='ALL')  players=players.filter(function(p){return p.pos===currentFilter;});
+  document.getElementById('players-count').textContent=players.length+' player'+(players.length!==1?'s':'');
+  var grid=document.getElementById('players-grid');
   if(!players.length){
-    grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">&#9917;</div><div class="empty-text">No players in this category yet</div></div>';
+    grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">⚽</div><div class="empty-text">No players in this category yet</div></div>';
     return;
   }
   grid.innerHTML=players.map(function(p){return playerCardHTML(p,d.captains);}).join('');
@@ -1114,25 +954,19 @@ function playerCardHTML(p, captains){
   var stripClass=p.stats?'strip-'+p.pos:'strip-pending';
   var tier=p.price!=null?getTier(p.price):null;
 
-  var priceHTML, bottomHTML;
-
+  var priceHTML, bottomHTML='';
   if(p.stats&&p.price!=null){
-    var tierBadge = tier==='ELITE'
-      ? '<span class="tier-badge tier-elite">&#129351; Elite</span>'
-      : tier==='SOLID'
-      ? '<span class="tier-badge tier-solid">&#129352; Solid</span>'
-      : '<span class="tier-badge tier-budget">Budget</span>';
-
+    var tierLabel = tier==='ELITE'?'<span class="tier-badge tier-elite">★ Elite</span>'
+                  :tier==='SOLID'?'<span class="tier-badge tier-solid">● Solid</span>'
+                  :'<span class="tier-badge tier-budget">Budget</span>';
     priceHTML='<div><div class="card-price-row">'
       +'<span><span class="card-price">'+p.price.toFixed(1)+'</span> <span class="card-price-cr">cr</span></span>'
-      +'</div>'+tierBadge+'</div>';
-    bottomHTML=''; // no stats shown — price + tier only
+      +'</div>'+tierLabel+'</div>';
   } else {
     priceHTML='<span class="card-price-pending">Pending rating</span>';
     bottomHTML='<div class="card-divider"></div><div class="card-pending-body"><div class="pending-label">Awaiting organiser rating</div></div>';
   }
-
-  var soldTag=captain?'<div class="card-sold-tag">&#128203; '+(captain.team||captain.name)+'</div>':'';
+  var soldTag=captain?'<div class="card-sold-tag">📋 '+(captain.team||captain.name)+'</div>':'';
   var topPad=captain?'padding-top:2rem;':'';
 
   return '<div class="player-card">'
@@ -1141,26 +975,25 @@ function playerCardHTML(p, captains){
     +'<div class="card-top" style="'+topPad+'">'
       +'<div class="card-pos pos-'+p.pos+'">'+p.pos+'</div>'
       +'<div class="card-avatar">'+initials+'</div>'
-      +'<div class="card-name">'+p.name+'</div>'
+      +'<div class="card-name">'+esc(p.name)+'</div>'
       +priceHTML
     +'</div>'
     +bottomHTML
   +'</div>';
 }
 
-/* ── AUCTION PAGE ────────────────────────────────────────── */
+/* ════════════════════════════════════════
+   AUCTION PAGE
+════════════════════════════════════════ */
 function renderAuction(){
   var d=getData();
+  document.getElementById('auction-count').textContent=d.captains.length+' captain'+(d.captains.length!==1?'s':'');
   var capGrid=document.getElementById('captains-grid');
-  var countEl=document.getElementById('auction-count');
-  countEl.textContent=d.captains.length+' captain'+(d.captains.length!==1?'s':'');
-
   if(!d.captains.length){
-    capGrid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">&#127942;</div><div class="empty-text">No captains added yet</div></div>';
+    capGrid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">🏆</div><div class="empty-text">No captains added yet</div></div>';
   } else {
     capGrid.innerHTML=d.captains.map(function(c){return captainCardHTML(c,d.players);}).join('');
   }
-
   renderTierSections(d);
 }
 
@@ -1171,19 +1004,22 @@ function captainCardHTML(c, players){
   var pct=Math.max(0,(rem/100)*100);
   var fillClass=rem<20?'danger':rem<40?'warn':'';
   var initials=c.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
+  var needs=getSquadNeeds(squad);
+  var needsHTML='';
+  Object.keys(needs).forEach(function(pos){
+    needsHTML+='<span class="need-badge need-'+pos+'">Need '+needs[pos]+' '+pos+'</span>';
+  });
+  if(squad.length>=SQUAD_MAX) needsHTML='<span class="need-badge" style="background:rgba(26,122,60,0.12);color:#4ecb71;border:1px solid rgba(26,122,60,0.3);">✓ Squad Full</span>';
 
-  // 7-aside: 2-3-1 + 3 subs
+  // Formation display: 1GK / 2DEF / 3MID / 1FWD + 3 subs
   var byPos={GK:[],DEF:[],MID:[],FWD:[]};
   squad.forEach(function(p){if(byPos[p.pos]) byPos[p.pos].push(p);});
   var formation=[
-    {label:'GK',  slots:1, players:byPos.GK.slice(0,1)},
-    {label:'DEF', slots:2, players:byPos.DEF.slice(0,2)},
-    {label:'MID', slots:3, players:byPos.MID.slice(0,3)},
-    {label:'FWD', slots:1, players:byPos.FWD.slice(0,1)},
+    {label:'GK', slots:1, players:byPos.GK.slice(0,1)},
+    {label:'DEF',slots:2, players:byPos.DEF.slice(0,2)},
+    {label:'MID',slots:3, players:byPos.MID.slice(0,3)},
+    {label:'FWD',slots:1, players:byPos.FWD.slice(0,1)},
   ];
-  var startingCount=formation.reduce(function(a,r){return a+r.slots;},0); // 7
-  var starters=squad.slice(0,7);
-  var subs=squad.slice(7,10);
 
   var pitchRows=formation.map(function(row){
     var slots='';
@@ -1191,100 +1027,218 @@ function captainCardHTML(c, players){
       var pl=row.players[i];
       if(pl){
         var ini=pl.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
-        slots+='<div class="pitch-player"><div class="pitch-player-circle" style="background:var(--bg4);color:var(--gold);">'+ini+'</div><div class="pitch-player-name">'+pl.name.split(' ')[0]+'</div></div>';
+        var col=posColor(pl.pos);
+        slots+='<div class="pitch-player">'
+          +'<div class="pitch-player-circle" style="border-color:'+col+'40;background:'+col+'15;color:'+col+';">'+ini+'</div>'
+          +'<div class="pitch-player-name">'+pl.name.split(' ')[0]+'</div>'
+        +'</div>';
       } else {
-        slots+='<div class="pitch-player pitch-empty"><div class="pitch-player-circle"></div><div class="pitch-player-name" style="color:var(--txt3);">Empty</div></div>';
+        slots+='<div class="pitch-player pitch-empty"><div class="pitch-player-circle"></div><div class="pitch-player-name" style="color:var(--txt3);">—</div></div>';
       }
     }
     return '<div class="pitch-row">'+slots+'</div>';
   }).join('');
 
+  // Subs: anyone beyond starter slots
+  var starterSet=[];
+  formation.forEach(function(row){row.players.forEach(function(p){starterSet.push(p.id);});});
+  var subs=squad.filter(function(p){return !starterSet.includes(p.id);}).slice(0,3);
   var subSlots='';
   for(var i=0;i<3;i++){
     var sub=subs[i];
     if(sub){
       var ini=sub.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
-      subSlots+='<div class="pitch-player"><div class="pitch-player-circle" style="background:rgba(255,255,255,0.04);font-size:0.8rem;">'+ini+'</div><div class="pitch-player-name">'+sub.name.split(' ')[0]+'</div></div>';
+      var col=posColor(sub.pos);
+      subSlots+='<div class="pitch-player">'
+        +'<div class="pitch-player-circle" style="font-size:0.8rem;border-color:'+col+'40;background:'+col+'0d;color:'+col+';">'+ini+'</div>'
+        +'<div class="pitch-player-name">'+sub.name.split(' ')[0]+'</div>'
+      +'</div>';
     } else {
       subSlots+='<div class="pitch-player pitch-empty"><div class="pitch-player-circle"></div><div class="pitch-player-name" style="color:var(--txt3);">—</div></div>';
     }
   }
 
+  var avatarGrad='background:linear-gradient(135deg,'+['#1a7a3c','#c9a84c','#3c7de0','#e03c3c','#8b3ce0'][c.name.charCodeAt(0)%5]+','+['#4ecb71','#e8c96a','#6fa8f5','#f57070','#c17cf0'][c.name.charCodeAt(1)%5]+');';
+
   return '<div class="captain-card">'
     +'<div class="cap-strip"></div>'
     +'<div class="cap-inner">'
       +'<div class="cap-header">'
-        +'<div class="cap-avatar">'+initials+'</div>'
-        +'<div><div class="cap-name">'+c.name+'</div><div class="cap-team">'+(c.team||'No team name')+'</div></div>'
+        +'<div class="cap-avatar" style="'+avatarGrad+'">'+initials+'</div>'
+        +'<div><div class="cap-name">'+esc(c.name)+'</div><div class="cap-team">'+(c.team||'No team name')+'</div></div>'
       +'</div>'
       +'<div class="budget-lbl"><span>Budget</span><span class="brem">'+rem.toFixed(1)+' cr left</span></div>'
       +'<div class="budget-bar"><div class="budget-fill '+fillClass+'" style="width:'+pct+'%"></div></div>'
-      +'<div class="squad-meta">'+squad.length+'/10 players &middot; '+spent.toFixed(1)+' cr spent</div>'
+      +'<div class="squad-meta">'+squad.length+'/10 players · '+spent.toFixed(1)+' cr spent</div>'
+      +'<div class="squad-needs">'+needsHTML+'</div>'
       +'<div class="pitch-view">'
-        +'<div class="pitch-title">2&ndash;3&ndash;1 &middot; 7-Aside</div>'
+        +'<div class="pitch-title">1–2–3–1 · 7-Aside</div>'
         +pitchRows
-        +'<div class="pitch-subs-row">'
-          +'<div class="pitch-subs-label">Substitutes</div>'
-          +subSlots
-        +'</div>'
+        +'<div class="pitch-subs-row"><div class="pitch-subs-label">Substitutes (3)</div>'+subSlots+'</div>'
       +'</div>'
     +'</div>'
   +'</div>';
 }
 
 var TIER_CONFIG=[
-  {id:'elite', label:'Elite',    sub:'Price 10 cr and above',   crown:'&#129351;', hdrClass:'tier-elite-hdr', badgeClass:'tier-elite-badge', min:10, max:99},
-  {id:'solid', label:'Solid',    sub:'Price 6&ndash;9.5 cr',    crown:'&#129352;', hdrClass:'tier-solid-hdr', badgeClass:'tier-solid-badge', min:6,  max:9.5},
-  {id:'budget',label:'Budget',   sub:'Price 5.5 cr and under',  crown:'&#9917;',   hdrClass:'',               badgeClass:'tier-budget-badge', min:0,  max:5.5},
+  {id:'elite', label:'Elite',   sub:'Price 10 cr and above',  crown:'🥇', hdrClass:'tier-elite-hdr', badgeClass:'tier-elite-badge', min:10, max:999},
+  {id:'solid', label:'Solid',   sub:'Price 6–9.5 cr',         crown:'🥈', hdrClass:'tier-solid-hdr', badgeClass:'tier-solid-badge', min:6,  max:9.5},
+  {id:'budget',label:'Budget',  sub:'Price 5.5 cr and under', crown:'⚽', hdrClass:'',               badgeClass:'tier-budget-badge', min:0,  max:5.5},
 ];
 var POS_ORDER=['FWD','MID','DEF','GK'];
 
 function renderTierSections(d){
   var el=document.getElementById('tier-sections');
   var unassigned=d.players.filter(function(p){return p.stats&&p.price!=null&&!p.captainId;});
-  var html='<div class="section-header" style="margin-top:1rem;"><div class="section-title" style="font-size:1.75rem;">Player Pool</div></div>';
+  var html='<div class="section-header" style="margin-top:1rem;"><div class="section-title" style="font-size:1.75rem;">Available Players</div></div>';
 
   TIER_CONFIG.forEach(function(tier){
     var tierPlayers=unassigned.filter(function(p){return p.price>=tier.min&&p.price<=tier.max;});
-    // Sort: FWD first, then MID, DEF, GK; within position by price desc
     tierPlayers.sort(function(a,b){
-      var pi=POS_ORDER.indexOf(a.pos), pj=POS_ORDER.indexOf(b.pos);
+      var pi=POS_ORDER.indexOf(a.pos),pj=POS_ORDER.indexOf(b.pos);
       if(pi!==pj) return pi-pj;
       return b.price-a.price;
     });
-
-    var openClass= tier.id==='elite'?' open':'';
+    var openClass=tier.id==='elite'?' open':'';
     html+='<div class="tier-section">'
       +'<div class="tier-header '+tier.hdrClass+openClass+'" onclick="toggleTier(this)">'
         +'<div class="tier-header-left">'
           +'<div class="tier-crown">'+tier.crown+'</div>'
-          +'<div class="tier-header-info">'
+          +'<div>'
             +'<div class="tier-name">'+tier.label+'</div>'
             +'<div class="tier-sub">'+tier.sub+'</div>'
           +'</div>'
           +'<span class="tier-count-badge '+tier.badgeClass+'">'+tierPlayers.length+' available</span>'
         +'</div>'
-        +'<div class="tier-chevron">&#9660;</div>'
+        +'<div class="tier-chevron">▾</div>'
       +'</div>'
       +'<div class="tier-body'+openClass+'">'
         +(tierPlayers.length
           ?'<div class="players-grid">'+tierPlayers.map(function(p){return playerCardHTML(p,d.captains);}).join('')+'</div>'
-          :'<div class="empty-state"><div class="empty-icon">&#9646;</div><div class="empty-text">No '+tier.label.toLowerCase()+' players available yet</div></div>'
+          :'<div class="empty-state"><div class="empty-icon">—</div><div class="empty-text">No '+tier.label.toLowerCase()+' players available</div></div>'
         )
       +'</div>'
     +'</div>';
   });
-
   el.innerHTML=html;
 }
 
 function toggleTier(hdr){
   hdr.classList.toggle('open');
-  var body=hdr.nextElementSibling;
-  body.classList.toggle('open');
+  hdr.nextElementSibling.classList.toggle('open');
 }
 
-/* ── ADMIN AUTH ─────────────────────────────────────────── */
+/* ════════════════════════════════════════
+   TEAMS PAGE
+════════════════════════════════════════ */
+function renderTeams(){
+  var d=getData();
+  document.getElementById('teams-count').textContent=d.captains.length+' team'+(d.captains.length!==1?'s'+'':'')+' · Season 1';
+  var grid=document.getElementById('teams-grid');
+  if(!d.captains.length){
+    grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">🏆</div><div class="empty-text">Teams will appear here once captains are added</div></div>';
+    return;
+  }
+  grid.innerHTML=d.captains.map(function(c){return teamCardHTML(c,d.players,'');}).join('');
+}
+
+function teamCardHTML(c, players, highlightId){
+  var squad=players.filter(function(p){return p.captainId===c.id;});
+  var initials=c.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
+  var avatarGrad='linear-gradient(135deg,'+['#1a7a3c','#c9a84c','#3c7de0','#e03c3c','#8b3ce0'][c.name.charCodeAt(0)%5]+','+['#4ecb71','#e8c96a','#6fa8f5','#f57070','#c17cf0'][c.name.charCodeAt(1)%5]+')';
+
+  var rosterByPos={GK:[],DEF:[],MID:[],FWD:[]};
+  squad.forEach(function(p){if(rosterByPos[p.pos]) rosterByPos[p.pos].push(p);});
+
+  var rosterHTML='';
+  if(!squad.length){
+    rosterHTML='<div class="team-empty">No players drafted yet</div>';
+  } else {
+    POS_ORDER.slice().reverse().forEach(function(pos){ // GK, DEF, MID, FWD order
+      var posPlayers=rosterByPos[pos];
+      if(!posPlayers.length) return;
+      rosterHTML+='<div class="roster-pos-group">'
+        +'<div class="roster-pos-label">'+pos+'</div>';
+      posPlayers.forEach(function(p){
+        var isYou=p.id===highlightId;
+        rosterHTML+='<div class="roster-player-row'+(isYou?' highlight':'')+'">'
+          +'<span class="roster-player-name">'+esc(p.name)+(isYou?' 👤':'')+'</span>'
+          +'<div style="display:flex;align-items:center;gap:0.5rem;">'
+            +(p.bidPrice?'<span class="roster-player-price">'+p.bidPrice.toFixed(1)+' cr</span>':'')
+            +(isYou?'<span class="roster-player-you">You</span>':'')
+          +'</div>'
+        +'</div>';
+      });
+      rosterHTML+='</div>';
+    });
+  }
+
+  return '<div class="team-card">'
+    +'<div class="team-banner"><div class="team-banner-inner" style="background:'+avatarGrad+'"></div></div>'
+    +'<div class="team-info">'
+      +'<div class="team-name-row">'
+        +'<div class="team-crest" style="background:'+avatarGrad+'">'+initials+'</div>'
+        +'<div>'
+          +'<div class="team-fullname">'+(c.team||c.name)+'</div>'
+          +'<div class="team-captain-name">Captain: '+esc(c.name)+' · '+squad.length+'/10 players</div>'
+        +'</div>'
+      +'</div>'
+      +'<div class="team-roster">'+rosterHTML+'</div>'
+    +'</div>'
+  +'</div>';
+}
+
+function searchPlayerTeam(){
+  var q=document.getElementById('team-search').value.trim().toLowerCase();
+  var resultEl=document.getElementById('team-search-result');
+  var grid=document.getElementById('teams-grid');
+  if(!q){ resultEl.innerHTML=''; renderTeams(); return; }
+
+  var d=getData();
+  var match=d.players.find(function(p){return p.name.toLowerCase().includes(q);});
+
+  if(!match){
+    resultEl.innerHTML='<div class="psr-not-found">No player found matching "'+esc(q)+'" — check the spelling or ask the organiser.</div>';
+    grid.innerHTML='';
+    return;
+  }
+
+  if(!match.captainId){
+    var initials=match.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
+    resultEl.innerHTML='<div class="player-search-result">'
+      +'<div class="psr-avatar">'+initials+'</div>'
+      +'<div class="psr-info">'
+        +'<div class="psr-name">'+esc(match.name)+'</div>'
+        +'<div class="psr-team" style="color:var(--txt2);">Not drafted yet</div>'
+        +'<div class="psr-pos">'+match.pos+' · '+( match.price!=null?match.price.toFixed(1)+' cr':'Awaiting rating')+'</div>'
+      +'</div>'
+    +'</div>';
+    grid.innerHTML='';
+    return;
+  }
+
+  var captain=d.captains.find(function(c){return c.id===match.captainId;});
+  if(!captain){ resultEl.innerHTML=''; return; }
+
+  var initials=match.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
+  var avatarGrad='linear-gradient(135deg,'+['#1a7a3c','#c9a84c','#3c7de0','#e03c3c','#8b3ce0'][captain.name.charCodeAt(0)%5]+','+['#4ecb71','#e8c96a','#6fa8f5','#f57070','#c17cf0'][captain.name.charCodeAt(1)%5]+')';
+
+  resultEl.innerHTML='<div class="player-search-result">'
+    +'<div class="psr-avatar" style="background:'+avatarGrad+'">'+initials+'</div>'
+    +'<div class="psr-info">'
+      +'<div class="psr-name">'+esc(match.name)+'</div>'
+      +'<div class="psr-team">Playing for: '+(captain.team||captain.name)+'</div>'
+      +'<div class="psr-pos">'+match.pos+' · Drafted for '+(match.bidPrice?match.bidPrice.toFixed(1)+' cr':'—')+'</div>'
+    +'</div>'
+  +'</div>';
+
+  // Show the team card with the player highlighted
+  grid.innerHTML=teamCardHTML(captain,d.players,match.id);
+}
+
+/* ════════════════════════════════════════
+   ADMIN AUTH
+════════════════════════════════════════ */
 var adminLoggedIn=false;
 function adminLogin(){
   var pw=document.getElementById('admin-pw').value;
@@ -1295,6 +1249,7 @@ function adminLogin(){
     renderAdminPlayers();
     renderAdminCaptains();
     refreshAssignDropdowns();
+    renderPricingGuide();
   } else {
     showToast('Incorrect password.','error');
   }
@@ -1310,34 +1265,36 @@ function switchAdminTab(tab,btn){
   document.querySelectorAll('.admin-panel').forEach(function(p){p.classList.remove('active');});
   btn.classList.add('active');
   document.getElementById('tab-'+tab).classList.add('active');
-  if(tab==='assign') refreshAssignDropdowns();
+  if(tab==='assign'){ refreshAssignDropdowns(); }
   if(tab==='captains') renderAdminCaptains();
+  if(tab==='pricing') renderPricingGuide();
 }
 
-/* ── ADMIN PLAYERS ─────────────────────────────────────── */
+/* ════════════════════════════════════════
+   ADMIN PLAYERS
+════════════════════════════════════════ */
 function renderAdminPlayers(){
   if(!adminLoggedIn) return;
   var d=getData();
   var el=document.getElementById('admin-players-list');
   if(!d.players.length){
-    el.innerHTML='<div class="empty-state"><div class="empty-icon">&#128203;</div><div class="empty-text">No players registered yet</div></div>';
+    el.innerHTML='<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-text">No players registered yet</div></div>';
     return;
   }
   el.innerHTML=d.players.map(function(p){
     var priceHTML=p.price!=null
       ?'<div class="arow-price">'+p.price.toFixed(1)+' cr</div>'
       :'<div class="arow-price unrated">Unrated</div>';
-    var selfHTML=p.selfRating
-      ?'<div class="arow-self">Self: '+p.selfRating+'/10</div>'
-      :'';
-    var videoBtn=p.video
-      ?'<a href="'+p.video+'" target="_blank" class="btn-sm" style="text-decoration:none;">&#127909; Video</a>'
-      :'';
+    var selfHTML=p.selfRating?'<div class="arow-self">Self: '+p.selfRating+'/10</div>':'';
+    var videoBtn=p.video?'<a href="'+p.video+'" target="_blank" class="btn-sm" style="text-decoration:none;">🎬 Video</a>':'';
+    var captain=p.captainId?d.captains.find(function(c){return c.id===p.captainId;}):null;
+    var draftedTag=captain?'<span style="font-family:var(--font-mono);font-size:0.55rem;color:#4ecb71;letter-spacing:0.08em;">→ '+(captain.team||captain.name)+'</span>':'';
     return '<div class="admin-row">'
-      +'<div class="arow-name">'+p.name+'</div>'
+      +'<div class="arow-name">'+esc(p.name)+'</div>'
       +'<div class="arow-pos card-pos pos-'+p.pos+'">'+p.pos+'</div>'
       +selfHTML
       +priceHTML
+      +draftedTag
       +videoBtn
       +'<button class="btn-sm btn-green" onclick="openRatingModal(\''+p.id+'\')">Rate</button>'
       +'<button class="btn-sm btn-danger" onclick="deletePlayer(\''+p.id+'\')">Delete</button>'
@@ -1351,26 +1308,31 @@ function deletePlayer(id){
   d.players=d.players.filter(function(p){return p.id!==id;});
   saveData(d);
   renderAdminPlayers();
-  showToast('Player removed.','success');
   updateHeroStats();
+  showToast('Player removed.','success');
 }
 
-/* ── RATING MODAL ─────────────────────────────────────── */
+/* ════════════════════════════════════════
+   RATING MODAL
+════════════════════════════════════════ */
 function openRatingModal(playerId){
   var d=getData();
   var player=d.players.find(function(p){return p.id===playerId;});
   if(!player) return;
   document.getElementById('rating-player-id').value=playerId;
   document.getElementById('rating-modal-title').textContent='Rate: '+player.name;
+  var pp=POS_PRICE[player.pos]||{base:4,ceil:12};
+  document.getElementById('rating-modal-sub').textContent=player.pos+' — Price range: '+pp.base.toFixed(1)+' – '+pp.ceil.toFixed(1)+' cr · Self-rated: '+player.selfRating+'/10';
   var stats=POS_STATS[player.pos]||[];
   var existing=player.stats||{};
   document.getElementById('stat-inputs').innerHTML=stats.map(function(s){
     var sid='stat_'+s.replace(/[\s\-]+/g,'_').replace(/[^a-zA-Z0-9_]/g,'');
     return '<div class="stat-ig">'
-      +'<label>'+s+' (1–10)</label>'
+      +'<label>'+s+'</label>'
       +'<input type="number" min="1" max="10" id="'+sid+'" value="'+(existing[s]||'')+'" placeholder="1–10" oninput="updatePricePreview()">'
     +'</div>';
   }).join('');
+  document.getElementById('price-range-hint').textContent='Range for '+player.pos+': '+pp.base.toFixed(1)+' – '+pp.ceil.toFixed(1)+' cr';
   updatePricePreview();
   document.getElementById('rating-modal').classList.add('open');
 }
@@ -1409,17 +1371,19 @@ function saveRating(){
     if(!v||v<1||v>10){valid=false;return;}
     vals[s]=v;
   });
-  if(!valid){showToast('All stats must be between 1 and 10.','error');return;}
+  if(!valid){showToast('All stats must be 1–10.','error');return;}
   player.stats=vals;
   player.price=calcPrice(vals,player.pos);
   saveData(d);
   closeRatingModal();
   renderAdminPlayers();
   updateHeroStats();
-  showToast(player.name+' rated — '+player.price.toFixed(1)+' cr','success');
+  showToast(player.name+' rated — '+player.price.toFixed(1)+' cr ('+player.pos+')','success');
 }
 
-/* ── ADMIN CAPTAINS ─────────────────────────────────────── */
+/* ════════════════════════════════════════
+   ADMIN CAPTAINS
+════════════════════════════════════════ */
 function addCaptain(){
   var name=document.getElementById('cap-name').value.trim();
   var team=document.getElementById('cap-team').value.trim();
@@ -1439,14 +1403,19 @@ function renderAdminCaptains(){
   var d=getData();
   var el=document.getElementById('admin-captains-list');
   if(!d.captains.length){
-    el.innerHTML='<div class="empty-state"><div class="empty-icon">&#127942;</div><div class="empty-text">No captains yet</div></div>';
+    el.innerHTML='<div class="empty-state"><div class="empty-icon">🏆</div><div class="empty-text">No captains yet</div></div>';
     return;
   }
   el.innerHTML=d.captains.map(function(c){
     var squad=d.players.filter(function(p){return p.captainId===c.id;});
     var spent=squad.reduce(function(a,p){return a+(p.bidPrice||0);},0);
+    var needs=getSquadNeeds(squad);
+    var needStr=Object.keys(needs).length
+      ?Object.keys(needs).map(function(pos){return needs[pos]+' '+pos;}).join(', ')
+      :squad.length>=SQUAD_MAX?'Squad full':'No starters needed';
     return '<div class="admin-row">'
-      +'<div class="arow-name">'+c.name+(c.team?' <span style="color:var(--txt3);font-size:0.8rem;">&middot; '+c.team+'</span>':'')+'</div>'
+      +'<div class="arow-name">'+esc(c.name)+(c.team?' <span style="color:var(--txt3);font-size:0.8rem;">· '+esc(c.team)+'</span>':'')+'</div>'
+      +'<div style="font-family:var(--font-mono);font-size:0.6rem;color:var(--txt3);">Needs: '+needStr+'</div>'
       +'<div style="font-family:var(--font-mono);font-size:0.62rem;color:var(--gold);margin-left:auto;">'+(100-spent).toFixed(1)+' cr left</div>'
       +'<div style="font-family:var(--font-mono);font-size:0.62rem;color:var(--txt3);">'+squad.length+'/10</div>'
       +'<button class="btn-sm btn-danger" onclick="deleteCaptain(\''+c.id+'\')">Delete</button>'
@@ -1465,28 +1434,75 @@ function deleteCaptain(id){
   showToast('Captain removed.','success');
 }
 
-/* ── ASSIGN ─────────────────────────────────────────────── */
+/* ════════════════════════════════════════
+   ASSIGN TAB
+════════════════════════════════════════ */
 function refreshAssignDropdowns(){
   var d=getData();
   var pSel=document.getElementById('assign-player');
   var cSel=document.getElementById('assign-captain');
   var avail=d.players.filter(function(p){return p.stats&&!p.captainId;});
-  // Sort FWD first
   avail.sort(function(a,b){
     var pi=POS_ORDER.indexOf(a.pos),pj=POS_ORDER.indexOf(b.pos);
     if(pi!==pj) return pi-pj;
     return b.price-a.price;
   });
   pSel.innerHTML=avail.length
-    ?avail.map(function(p){return '<option value="'+p.id+'">'+p.name+' ('+p.pos+') — '+p.price.toFixed(1)+' cr</option>';}).join('')
+    ?avail.map(function(p){return '<option value="'+p.id+'">'+esc(p.name)+' ('+p.pos+') — '+p.price.toFixed(1)+' cr</option>';}).join('')
     :'<option value="">No unassigned rated players</option>';
   cSel.innerHTML=d.captains.length
     ?d.captains.map(function(c){
       var squad=d.players.filter(function(pl){return pl.captainId===c.id;});
       var spent=squad.reduce(function(a,pl){return a+(pl.bidPrice||0);},0);
-      return '<option value="'+c.id+'">'+c.name+' — '+(100-spent).toFixed(1)+' cr left ('+squad.length+'/10)</option>';
+      return '<option value="'+c.id+'">'+esc(c.name)+' ('+esc(c.team||'?')+') — '+(100-spent).toFixed(1)+' cr left — '+squad.length+'/10</option>';
     }).join('')
     :'<option value="">No captains added</option>';
+
+  // Show needs per captain
+  renderCaptainNeeds(d);
+  updateAssignPreview();
+}
+
+function renderCaptainNeeds(d){
+  var el=document.getElementById('assign-captain-needs');
+  if(!d.captains.length){el.innerHTML='';return;}
+  var html='<div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1rem;">';
+  d.captains.forEach(function(c){
+    var squad=d.players.filter(function(p){return p.captainId===c.id;});
+    var needs=getSquadNeeds(squad);
+    var needStr=Object.keys(needs).length
+      ?Object.keys(needs).map(function(p){return needs[p]+' '+p;}).join(', ')
+      :squad.length>=SQUAD_MAX?'FULL':'OK';
+    html+='<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:0.6rem 0.85rem;">'
+      +'<div style="font-family:var(--font-mono);font-size:0.58rem;color:var(--gold);letter-spacing:0.08em;">'+esc(c.team||c.name)+'</div>'
+      +'<div style="font-family:var(--font-mono);font-size:0.58rem;color:var(--txt3);margin-top:0.15rem;">'+needStr+'</div>'
+    +'</div>';
+  });
+  html+='</div>';
+  el.innerHTML=html;
+}
+
+function updateAssignPreview(){
+  var pid=document.getElementById('assign-player').value;
+  var cid=document.getElementById('assign-captain').value;
+  var bid=parseFloat(document.getElementById('assign-bid').value);
+  var el=document.getElementById('assign-preview');
+  if(!pid||!cid){el.innerHTML='';return;}
+  var d=getData();
+  var player=d.players.find(function(p){return p.id===pid;});
+  var captain=d.captains.find(function(c){return c.id===cid;});
+  if(!player||!captain){el.innerHTML='';return;}
+  var squad=d.players.filter(function(p){return p.captainId===cid;});
+  var spent=squad.reduce(function(a,p){return a+(p.bidPrice||0);},0);
+  var rem=100-spent;
+  var warnings=[];
+  if(squad.length>=SQUAD_MAX) warnings.push('⚠️ Squad is already full (10/10)');
+  if(!isNaN(bid)&&bid>rem) warnings.push('⚠️ Bid ('+bid+' cr) exceeds remaining budget ('+rem.toFixed(1)+' cr)');
+  var warningHTML=warnings.length?'<div style="color:#f57070;font-family:var(--font-mono);font-size:0.62rem;margin-top:0.5rem;">'+warnings.join('<br>')+'</div>':'';
+  el.innerHTML='<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;font-family:var(--font-mono);font-size:0.65rem;color:var(--txt2);">'
+    +esc(player.name)+' ('+player.pos+', '+player.price.toFixed(1)+' cr base) → '+(captain.team||captain.name)+' · '+rem.toFixed(1)+' cr remaining'
+    +warningHTML
+  +'</div>';
 }
 
 function assignPlayer(){
@@ -1502,17 +1518,43 @@ function assignPlayer(){
   var squad=d.players.filter(function(p){return p.captainId===cid;});
   var spent=squad.reduce(function(a,p){return a+(p.bidPrice||0);},0);
   var rem=100-spent;
-  if(squad.length>=10){showToast(captain.name+"'s squad is full.",'error');return;}
+  if(squad.length>=SQUAD_MAX){showToast(captain.name+"'s squad is full (10/10).",'error');return;}
   if(bid>rem){showToast('Not enough credits. '+rem.toFixed(1)+' cr remaining.','error');return;}
   player.captainId=cid;
   player.bidPrice=bid;
   saveData(d);
   document.getElementById('assign-bid').value='';
   refreshAssignDropdowns();
-  showToast(player.name+' → '+captain.name+' for '+bid+' cr','success');
+  showToast(player.name+' → '+(captain.team||captain.name)+' for '+bid+' cr','success');
 }
 
-/* ── SETTINGS ─────────────────────────────────────────────── */
+/* ════════════════════════════════════════
+   PRICING GUIDE TAB
+════════════════════════════════════════ */
+function renderPricingGuide(){
+  var html='';
+  var posLabels={GK:'Goalkeeper',DEF:'Defender',MID:'Midfielder',FWD:'Forward'};
+  var posEmojis={GK:'🧤',DEF:'🛡️',MID:'⚙️',FWD:'⚡'};
+  ['GK','DEF','MID','FWD'].forEach(function(pos){
+    var pp=POS_PRICE[pos];
+    var stats=POS_STATS[pos];
+    var weights=STAT_WEIGHTS[pos];
+    var slotCount={GK:1,DEF:2,MID:3,FWD:1}[pos];
+    html+='<div class="pg-card">'
+      +'<div class="pg-pos" style="color:'+posColor(pos)+'">'+posEmojis[pos]+' '+pos+'</div>'
+      +'<div style="color:var(--txt3);font-family:var(--font-mono);font-size:0.6rem;margin-bottom:0.75rem;">'+posLabels[pos]+' · '+slotCount+' starter slot'+(slotCount>1?'s':'')+'</div>'
+      +'<div class="pg-row"><span>Min price</span><span>'+pp.base.toFixed(1)+' cr</span></div>'
+      +'<div class="pg-row"><span>Max price</span><span>'+pp.ceil.toFixed(1)+' cr</span></div>'
+      +'<div style="border-top:1px solid var(--border);margin:0.5rem 0;"></div>'
+      +stats.map(function(s){return '<div class="pg-row"><span>'+s+'</span><span>×'+weights[s]+'</span></div>';}).join('')
+    +'</div>';
+  });
+  document.getElementById('pricing-guide-content').innerHTML=html;
+}
+
+/* ════════════════════════════════════════
+   SETTINGS
+════════════════════════════════════════ */
 function changePassword(){
   var pw=document.getElementById('new-pw').value.trim();
   if(pw.length<4){showToast('Password must be at least 4 characters.','error');return;}
@@ -1529,10 +1571,12 @@ function clearAllData(){
   showToast('All data cleared.','success');
 }
 
-/* ── HERO STATS ─────────────────────────────────────────── */
+/* ════════════════════════════════════════
+   HERO STATS
+════════════════════════════════════════ */
 function updateHeroStats(){
   var d=getData();
-  var pc=d.players.length, rc=d.players.filter(function(p){return p.stats;}).length, cc=d.captains.length;
+  var pc=d.players.length,rc=d.players.filter(function(p){return p.stats;}).length,cc=d.captains.length;
   var sp=document.getElementById('stat-players');   if(sp) sp.textContent=pc;
   var sr=document.getElementById('stat-rated');     if(sr) sr.textContent=rc;
   var sc=document.getElementById('stat-captains');  if(sc) sc.textContent=cc;
@@ -1541,7 +1585,13 @@ function updateHeroStats(){
   ['tick-caps','tick-caps2'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=cc+' Captains';});
 }
 
-/* ── TOAST ─────────────────────────────────────────────── */
+/* ════════════════════════════════════════
+   UTILITIES
+════════════════════════════════════════ */
+function esc(s){
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
 var toastTimer;
 function showToast(msg,type){
   var el=document.getElementById('toast');
@@ -1551,15 +1601,9 @@ function showToast(msg,type){
   toastTimer=setTimeout(function(){el.className='toast';},3200);
 }
 
-/* ── SCROLL REVEAL ──────────────────────────────────────── */
-var revealObserver=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target);}
-  });
-},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
-document.querySelectorAll('.reveal').forEach(function(el){revealObserver.observe(el);});
-
-/* ── INIT ───────────────────────────────────────────────── */
+/* ════════════════════════════════════════
+   INIT
+════════════════════════════════════════ */
 updateHeroStats();
 updateSelfRatingDisplay();
 </script>
