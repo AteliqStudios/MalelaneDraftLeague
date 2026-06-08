@@ -1216,6 +1216,7 @@
   }
 </style>
 <base target="_blank">
+<base target="_blank">
 </head>
 <body>
 
@@ -1771,7 +1772,7 @@ function renderAdminPlayers() {
     const priceHTML = p.price != null
       ? '<div class="apl-price">' + p.price.toFixed(1) + '</div>'
       : '<div class="apl-price no-price">Unrated</div>';
-    return '<div class="admin-player-row"><div class="apl-name">' + p.name + '</div><div class="apl-pos card-pos-badge pos-' + p.pos + '">' + p.pos + '</div>' + priceHTML + '<button class="btn-sm btn-green" onclick="openRatingModal('' + p.id + '')">Rate</button><button class="btn-sm btn-danger" onclick="deletePlayer('' + p.id + '')">Delete</button></div>';
+    return '<div class="admin-player-row"><div class="apl-name">' + p.name + '</div><div class="apl-pos card-pos-badge pos-' + p.pos + '">' + p.pos + '</div>' + priceHTML + '<button class="btn-sm btn-green" onclick="openRatingModal('" + p.id + "')">Rate</button><button class="btn-sm btn-danger" onclick="deletePlayer('" + p.id + "')">Delete</button></div>';
   }).join('');
 }
 
@@ -1892,7 +1893,7 @@ function renderAdminCaptains() {
   el.innerHTML = d.captains.map(c => {
     const squad = d.players.filter(p => p.captainId === c.id);
     const spent = squad.reduce((a, p) => a + (p.bidPrice || 0), 0);
-    return '<div class="admin-player-row"><div class="apl-name">' + c.name + ' <span style="color:var(--gray);font-size:0.8rem;">' + (c.team ? '· ' + c.team : '') + '</span></div><div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--gold);margin-left:auto;">' + (100 - spent).toFixed(1) + ' cr left</div><div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--gray);">' + squad.length + '/10</div><button class="btn-sm btn-danger" onclick="deleteCaptain('' + c.id + '')">Delete</button></div>';
+    return '<div class="admin-player-row"><div class="apl-name">' + c.name + ' <span style="color:var(--gray);font-size:0.8rem;">' + (c.team ? '· ' + c.team : '') + '</span></div><div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--gold);margin-left:auto;">' + (100 - spent).toFixed(1) + ' cr left</div><div style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--gray);">' + squad.length + '/10</div><button class="btn-sm btn-danger" onclick="deleteCaptain('" + c.id + "')">Delete</button></div>';
   }).join('');
 }
 
@@ -1944,7 +1945,7 @@ function assignPlayer() {
   const spent = squad.reduce((a, p) => a + (p.bidPrice || 0), 0);
   const remaining = 100 - spent;
 
-  if (squad.length >= 10) { showToast(captain.name + ''s squad is full.', 'error'); return; }
+  if (squad.length >= 10) { showToast(captain.name + "'s squad is full.", 'error'); return; }
   if (bid > remaining) { showToast('Not enough credits. ' + remaining.toFixed(1) + ' cr remaining.', 'error'); return; }
 
   player.captainId = cid;
