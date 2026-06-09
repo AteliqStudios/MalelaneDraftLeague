@@ -429,14 +429,14 @@ select option{background:var(--bg3);color:var(--txt);}
     <span class="ticker-item" id="tick-rated">— Rated</span><span class="ticker-sep">·</span>
     <span class="ticker-item" id="tick-caps">— Captains</span><span class="ticker-sep">·</span>
     <span class="ticker-item">100 Credits Per Squad</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">10 Players &middot; 7-A-Side</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">10 Players &middot; 8-A-Side</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Season 1 — Register Now</span><span class="ticker-sep">·</span>
     <span class="ticker-item">&#9917; Malelane Draft League</span><span class="ticker-sep">·</span>
     <span class="ticker-item" id="tick-players2">— Players Registered</span><span class="ticker-sep">·</span>
     <span class="ticker-item" id="tick-rated2">— Rated</span><span class="ticker-sep">·</span>
     <span class="ticker-item" id="tick-caps2">— Captains</span><span class="ticker-sep">·</span>
     <span class="ticker-item">100 Credits Per Squad</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">10 Players &middot; 7-A-Side</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">10 Players &middot; 8-A-Side</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Season 1 — Register Now</span><span class="ticker-sep">·</span>
   </div>
 </div>
@@ -485,7 +485,7 @@ select option{background:var(--bg3);color:var(--txt);}
         <div class="hstat"><div class="hstat-num" id="stat-captains">—</div><div class="hstat-label">Captains</div></div>
         <div class="hstat"><div class="hstat-num">100</div><div class="hstat-label">Credits</div></div>
         <div class="hstat"><div class="hstat-num">10</div><div class="hstat-label">Per Squad</div></div>
-        <div class="hstat"><div class="hstat-num">7</div><div class="hstat-label">A-Side</div></div>
+        <div class="hstat"><div class="hstat-num">8</div><div class="hstat-label">A-Side</div></div>
       </div>
     </div>
     <div class="scroll-cue"><div class="scroll-txt">Scroll</div><div class="scroll-line"></div></div>
@@ -679,7 +679,7 @@ select option{background:var(--bg3);color:var(--txt);}
       </div>
 
       <div class="admin-panel" id="tab-assign">
-        <p style="color:var(--txt3);font-size:0.85rem;margin-bottom:1rem;">Assign rated players to a captain's squad. Squad limits: 1 GK, 2 DEF, 3 MID, 1 FWD starters + 3 flexible subs = 10 total.</p>
+        <p style="color:var(--txt3);font-size:0.85rem;margin-bottom:1rem;">Assign rated players to a captain's squad. Squad limits: 1 GK, 2 DEF, 3 MID, 2 FWD starters + 2 flexible subs = 10 total.</p>
         <div id="assign-captain-needs" style="margin-bottom:1.5rem;"></div>
         <div class="form-row" style="margin-bottom:1rem;">
           <div class="form-group"><label>Select Player</label><select id="assign-player" onchange="updateAssignPreview()"></select></div>
@@ -948,7 +948,7 @@ function posColor(pos){
   return {GK:'#ffa500',DEF:'#6fa8f5',MID:'#4ecb71',FWD:'#f57070'}[pos]||'#fff';
 }
 
-var STARTER_SLOTS={GK:1,DEF:2,MID:3,FWD:1};
+var STARTER_SLOTS={GK:1,DEF:2,MID:3,FWD:2};
 var SQUAD_MAX=10;
 function getSquadNeeds(squad){
   var counts={GK:0,DEF:0,MID:0,FWD:0};
@@ -1174,7 +1174,7 @@ function captainCardHTML(c, players){
     {slots:1,players:byPos.GK.slice(0,1)},
     {slots:2,players:byPos.DEF.slice(0,2)},
     {slots:3,players:byPos.MID.slice(0,3)},
-    {slots:1,players:byPos.FWD.slice(0,1)},
+    {slots:2,players:byPos.FWD.slice(0,2)},
   ];
   var pitchRows=formation.map(function(row){
     var slots='';
@@ -1193,9 +1193,9 @@ function captainCardHTML(c, players){
 
   var starterSet=[];
   formation.forEach(function(row){row.players.forEach(function(p){starterSet.push(p.id);});});
-  var subs=squad.filter(function(p){return !starterSet.includes(p.id);}).slice(0,3);
+  var subs=squad.filter(function(p){return !starterSet.includes(p.id);}).slice(0,2);
   var subSlots='';
-  for(var i=0;i<3;i++){
+  for(var i=0;i<2;i++){
     var sub=subs[i];
     if(sub){
       var ini=sub.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
@@ -1214,513 +1214,4 @@ function captainCardHTML(c, players){
       +'<div class="budget-bar"><div class="budget-fill '+fillClass+'" style="width:'+pct+'%"></div></div>'
       +'<div class="squad-meta">'+squad.length+'/10 players · '+spent.toFixed(1)+' cr spent</div>'
       +'<div class="squad-needs">'+needsHTML+'</div>'
-      +'<div class="pitch-view"><div class="pitch-title">1–2–3–1 · 7-Aside</div>'+pitchRows+'<div class="pitch-subs-row"><div class="pitch-subs-label">Substitutes (3)</div>'+subSlots+'</div></div>'
-    +'</div>'
-  +'</div>';
-}
-
-var TIER_CONFIG=[
-  {id:'elite',label:'Elite',  sub:'Price 10 cr and above',  crown:'🥇',hdrClass:'tier-elite-hdr',badgeClass:'tier-elite-badge',min:10,max:999},
-  {id:'solid',label:'Solid',  sub:'Price 6–9.5 cr',         crown:'🥈',hdrClass:'tier-solid-hdr',badgeClass:'tier-solid-badge',min:6,max:9.5},
-  {id:'budget',label:'Budget',sub:'Price 5.5 cr and under', crown:'⚽',hdrClass:'',               badgeClass:'tier-budget-badge',min:0,max:5.5},
-];
-var POS_ORDER=['FWD','MID','DEF','GK'];
-
-function renderTierSections(d){
-  var el=document.getElementById('tier-sections');
-  var unassigned=d.players.filter(function(p){return p.stats&&p.price!=null&&!p.captainId;});
-  var html='<div class="section-header" style="margin-top:1rem;"><div class="section-title" style="font-size:1.75rem;">Available Players</div></div>';
-  TIER_CONFIG.forEach(function(tier){
-    var tierPlayers=unassigned.filter(function(p){return p.price>=tier.min&&p.price<=tier.max;});
-    tierPlayers.sort(function(a,b){
-      var pi=POS_ORDER.indexOf(a.pos),pj=POS_ORDER.indexOf(b.pos);
-      if(pi!==pj) return pi-pj;
-      return b.price-a.price;
-    });
-    var openClass=tier.id==='elite'?' open':'';
-    html+='<div class="tier-section">'
-      +'<div class="tier-header '+tier.hdrClass+openClass+'" onclick="toggleTier(this)">'
-        +'<div class="tier-header-left"><div class="tier-crown">'+tier.crown+'</div>'
-          +'<div><div class="tier-name">'+tier.label+'</div><div class="tier-sub">'+tier.sub+'</div></div>'
-          +'<span class="tier-count-badge '+tier.badgeClass+'">'+tierPlayers.length+' available</span>'
-        +'</div>'
-        +'<div class="tier-chevron">▾</div>'
-      +'</div>'
-      +'<div class="tier-body'+openClass+'">'
-        +(tierPlayers.length
-          ?'<div class="players-grid">'+tierPlayers.map(function(p){return playerCardHTML(p,d.captains);}).join('')+'</div>'
-          :'<div class="empty-state"><div class="empty-icon">—</div><div class="empty-text">No '+tier.label.toLowerCase()+' players available</div></div>'
-        )
-      +'</div>'
-    +'</div>';
-  });
-  el.innerHTML=html;
-}
-function toggleTier(hdr){ hdr.classList.toggle('open'); hdr.nextElementSibling.classList.toggle('open'); }
-
-/* ════════════════════════════════════════
-   TEAMS PAGE
-════════════════════════════════════════ */
-async function renderTeams(){
-  var grid=document.getElementById('teams-grid');
-  grid.innerHTML='<div class="loading-state" style="grid-column:1/-1"><div class="loading-spinner"></div><div class="loading-txt">Loading teams...</div></div>';
-
-  var d = await dbGetAll();
-  document.getElementById('teams-count').textContent=d.captains.length+' team'+(d.captains.length!==1?'s':'')+' · Season 1';
-  if(!d.captains.length){
-    grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">🏆</div><div class="empty-text">Teams will appear here once captains are added</div></div>';
-    return;
-  }
-  grid.innerHTML=d.captains.map(function(c){return teamCardHTML(c,d.players,'');}).join('');
-}
-
-function teamCardHTML(c, players, highlightId){
-  var squad=players.filter(function(p){return p.captainId===c.id;});
-  var initials=c.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
-  var avatarGrad='linear-gradient(135deg,'+['#1a7a3c','#c9a84c','#3c7de0','#e03c3c','#8b3ce0'][c.name.charCodeAt(0)%5]+','+['#4ecb71','#e8c96a','#6fa8f5','#f57070','#c17cf0'][c.name.charCodeAt(1)%5]+')';
-  var rosterByPos={GK:[],DEF:[],MID:[],FWD:[]};
-  squad.forEach(function(p){if(rosterByPos[p.pos]) rosterByPos[p.pos].push(p);});
-  var rosterHTML='';
-  if(!squad.length){
-    rosterHTML='<div class="team-empty">No players drafted yet</div>';
-  } else {
-    ['GK','DEF','MID','FWD'].forEach(function(pos){
-      var posPlayers=rosterByPos[pos];
-      if(!posPlayers.length) return;
-      rosterHTML+='<div class="roster-pos-group"><div class="roster-pos-label">'+pos+'</div>';
-      posPlayers.forEach(function(p){
-        var isYou=p.id===highlightId;
-        rosterHTML+='<div class="roster-player-row'+(isYou?' highlight':'')+'"><span class="roster-player-name">'+esc(p.name)+(isYou?' 👤':'')+'</span>'
-          +'<div style="display:flex;align-items:center;gap:0.5rem;">'
-            +(p.bidPrice?'<span class="roster-player-price">'+p.bidPrice.toFixed(1)+' cr</span>':'')
-            +(isYou?'<span class="roster-player-you">You</span>':'')
-          +'</div></div>';
-      });
-      rosterHTML+='</div>';
-    });
-  }
-  return '<div class="team-card">'
-    +'<div class="team-banner"><div class="team-banner-inner" style="background:'+avatarGrad+'"></div></div>'
-    +'<div class="team-info">'
-      +'<div class="team-name-row"><div class="team-crest" style="background:'+avatarGrad+'">'+initials+'</div>'
-        +'<div><div class="team-fullname">'+(c.team||c.name)+'</div>'
-          +'<div class="team-captain-name">Captain: '+esc(c.name)+' · '+squad.length+'/10 players</div>'
-        +'</div>'
-      +'</div>'
-      +'<div class="team-roster">'+rosterHTML+'</div>'
-    +'</div>'
-  +'</div>';
-}
-
-var searchDebounceTimer;
-function searchPlayerTeam(){
-  clearTimeout(searchDebounceTimer);
-  searchDebounceTimer = setTimeout(doSearchPlayerTeam, 300);
-}
-
-async function doSearchPlayerTeam(){
-  var q=document.getElementById('team-search').value.trim().toLowerCase();
-  var resultEl=document.getElementById('team-search-result');
-  var grid=document.getElementById('teams-grid');
-  if(!q){ resultEl.innerHTML=''; renderTeams(); return; }
-
-  var d = await dbGetAll();
-  var match=d.players.find(function(p){return p.name.toLowerCase().includes(q);});
-  if(!match){
-    resultEl.innerHTML='<div class="psr-not-found">No player found matching "'+esc(q)+'" — check the spelling or ask the organiser.</div>';
-    grid.innerHTML='';
-    return;
-  }
-  if(!match.captainId){
-    var initials=match.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
-    resultEl.innerHTML='<div class="player-search-result"><div class="psr-avatar">'+initials+'</div>'
-      +'<div class="psr-info"><div class="psr-name">'+esc(match.name)+'</div>'
-        +'<div class="psr-team" style="color:var(--txt2);">Not drafted yet</div>'
-        +'<div class="psr-pos">'+match.pos+' · '+(match.price!=null?match.price.toFixed(1)+' cr':'Awaiting rating')+'</div>'
-      +'</div></div>';
-    grid.innerHTML='';
-    return;
-  }
-  var captain=d.captains.find(function(c){return c.id===match.captainId;});
-  if(!captain){ resultEl.innerHTML=''; return; }
-  var initials=match.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
-  var avatarGrad='linear-gradient(135deg,'+['#1a7a3c','#c9a84c','#3c7de0','#e03c3c','#8b3ce0'][captain.name.charCodeAt(0)%5]+','+['#4ecb71','#e8c96a','#6fa8f5','#f57070','#c17cf0'][captain.name.charCodeAt(1)%5]+')';
-  resultEl.innerHTML='<div class="player-search-result"><div class="psr-avatar" style="background:'+avatarGrad+'">'+initials+'</div>'
-    +'<div class="psr-info"><div class="psr-name">'+esc(match.name)+'</div>'
-      +'<div class="psr-team">Playing for: '+(captain.team||captain.name)+'</div>'
-      +'<div class="psr-pos">'+match.pos+' · Drafted for '+(match.bidPrice?match.bidPrice.toFixed(1)+' cr':'—')+'</div>'
-    +'</div></div>';
-  grid.innerHTML=teamCardHTML(captain,d.players,match.id);
-}
-
-/* ════════════════════════════════════════
-   ADMIN AUTH
-════════════════════════════════════════ */
-var adminLoggedIn=false;
-function adminLogin(){
-  var pw=document.getElementById('admin-pw').value;
-  if(pw===getAdminPw()){
-    adminLoggedIn=true;
-    document.getElementById('admin-login').style.display='none';
-    document.getElementById('admin-dashboard').style.display='block';
-    renderAdminPlayers();
-    renderAdminCaptains();
-    refreshAssignDropdowns();
-    renderPricingGuide();
-  } else {
-    showToast('Incorrect password.','error');
-  }
-}
-function adminLogout(){
-  adminLoggedIn=false;
-  document.getElementById('admin-pw').value='';
-  document.getElementById('admin-login').style.display='block';
-  document.getElementById('admin-dashboard').style.display='none';
-}
-function switchAdminTab(tab,btn){
-  document.querySelectorAll('.admin-tab').forEach(function(t){t.classList.remove('active');});
-  document.querySelectorAll('.admin-panel').forEach(function(p){p.classList.remove('active');});
-  btn.classList.add('active');
-  document.getElementById('tab-'+tab).classList.add('active');
-  if(tab==='assign')   refreshAssignDropdowns();
-  if(tab==='captains') renderAdminCaptains();
-  if(tab==='pricing')  renderPricingGuide();
-}
-
-/* ════════════════════════════════════════
-   ADMIN PLAYERS
-════════════════════════════════════════ */
-async function renderAdminPlayers(){
-  if(!adminLoggedIn) return;
-  var el=document.getElementById('admin-players-list');
-  el.innerHTML='<div class="loading-state"><div class="loading-spinner"></div><div class="loading-txt">Loading...</div></div>';
-  var d = await dbGetAll();
-  if(!d.players.length){
-    el.innerHTML='<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-text">No players registered yet</div></div>';
-    return;
-  }
-  el.innerHTML=d.players.map(function(p){
-    var priceHTML=p.price!=null?'<div class="arow-price">'+p.price.toFixed(1)+' cr</div>':'<div class="arow-price unrated">Unrated</div>';
-    var selfHTML=p.selfRating?'<div class="arow-self">Self: '+p.selfRating+'/10</div>':'';
-    var videoBtn=p.video?'<a href="'+p.video+'" target="_blank" class="btn-sm" style="text-decoration:none;">🎬 Video</a>':'';
-    var captain=p.captainId?d.captains.find(function(c){return c.id===p.captainId;}):null;
-    var draftedTag=captain?'<span style="font-family:var(--font-mono);font-size:0.55rem;color:#4ecb71;letter-spacing:0.08em;">→ '+(captain.team||captain.name)+'</span>':'';
-    return '<div class="admin-row">'
-      +'<div class="arow-name">'+esc(p.name)+'</div>'
-      +'<div class="arow-pos card-pos pos-'+p.pos+'">'+p.pos+'</div>'
-      +selfHTML+priceHTML+draftedTag+videoBtn
-      +'<button class="btn-sm btn-green" onclick="openRatingModal(\''+p.id+'\')">Rate</button>'
-      +'<button class="btn-sm btn-danger" onclick="deletePlayer(\''+p.id+'\')">Delete</button>'
-    +'</div>';
-  }).join('');
-}
-
-async function deletePlayer(id){
-  if(!confirm('Delete this player?')) return;
-  var ok = await dbDeletePlayer(id);
-  if(!ok){ showToast('Delete failed.','error'); return; }
-  renderAdminPlayers();
-  updateHeroStats();
-  showToast('Player removed.','success');
-}
-
-/* ════════════════════════════════════════
-   RATING MODAL
-   (uses in-memory player data fetched freshly)
-════════════════════════════════════════ */
-var _ratingPlayer = null;
-
-async function openRatingModal(playerId){
-  var d = await dbGetAll();
-  var player=d.players.find(function(p){return p.id===playerId;});
-  if(!player) return;
-  _ratingPlayer = player;
-  document.getElementById('rating-player-id').value=playerId;
-  document.getElementById('rating-modal-title').textContent='Rate: '+player.name;
-  var pp=POS_PRICE[player.pos]||{base:4,ceil:12};
-  document.getElementById('rating-modal-sub').textContent=player.pos+' — Price range: '+pp.base.toFixed(1)+' – '+pp.ceil.toFixed(1)+' cr · Self-rated: '+player.selfRating+'/10';
-  var stats=POS_STATS[player.pos]||[];
-  var existing=player.stats||{};
-  document.getElementById('stat-inputs').innerHTML=stats.map(function(s){
-    var sid='stat_'+s.replace(/[\s\-]+/g,'_').replace(/[^a-zA-Z0-9_]/g,'');
-    return '<div class="stat-ig"><label>'+s+'</label><input type="number" min="1" max="10" id="'+sid+'" value="'+(existing[s]||'')+'" placeholder="1–10" oninput="updatePricePreview()"></div>';
-  }).join('');
-  document.getElementById('price-range-hint').textContent='Range for '+player.pos+': '+pp.base.toFixed(1)+' – '+pp.ceil.toFixed(1)+' cr';
-  updatePricePreview();
-  document.getElementById('rating-modal').classList.add('open');
-}
-
-function updatePricePreview(){
-  if(!_ratingPlayer) return;
-  var stats=POS_STATS[_ratingPlayer.pos]||[];
-  var vals={};
-  stats.forEach(function(s){
-    var sid='stat_'+s.replace(/[\s\-]+/g,'_').replace(/[^a-zA-Z0-9_]/g,'');
-    var el=document.getElementById(sid);
-    if(el) vals[s]=Number(el.value)||0;
-  });
-  var price=calcPrice(vals,_ratingPlayer.pos);
-  document.getElementById('price-preview').textContent=price?price.toFixed(1)+' cr':'—';
-}
-
-function closeRatingModal(){ document.getElementById('rating-modal').classList.remove('open'); _ratingPlayer=null; }
-function closeRatingModalOverlay(e){ if(e.target===e.currentTarget) closeRatingModal(); }
-
-async function saveRating(){
-  if(!_ratingPlayer) return;
-  var player=_ratingPlayer;
-  var stats=POS_STATS[player.pos]||[];
-  var vals={};
-  var valid=true;
-  stats.forEach(function(s){
-    var sid='stat_'+s.replace(/[\s\-]+/g,'_').replace(/[^a-zA-Z0-9_]/g,'');
-    var el=document.getElementById(sid);
-    var v=Number(el&&el.value);
-    if(!v||v<1||v>10){ valid=false; return; }
-    vals[s]=v;
-  });
-  if(!valid){ showToast('All stats must be 1–10.','error'); return; }
-
-  var price=calcPrice(vals,player.pos);
-  var btn=document.getElementById('save-rating-btn');
-  btn.disabled=true;
-  btn.textContent='Saving...';
-
-  var ok = await dbUpdatePlayer(player.id, {stats:vals, price:price});
-  btn.disabled=false;
-  btn.textContent='Save Rating';
-
-  if(!ok){ showToast('Save failed. Try again.','error'); return; }
-  closeRatingModal();
-  renderAdminPlayers();
-  updateHeroStats();
-  showToast(player.name+' rated — '+price.toFixed(1)+' cr ('+player.pos+')','success');
-}
-
-/* ════════════════════════════════════════
-   ADMIN CAPTAINS
-════════════════════════════════════════ */
-async function addCaptain(){
-  var name=document.getElementById('cap-name').value.trim();
-  var team=document.getElementById('cap-team').value.trim();
-  if(!name){ showToast('Enter captain name.','error'); return; }
-  var captain={
-    id:Date.now().toString()+Math.random().toString(36).substr(2,5),
-    name:name,team:team,budget:100
-  };
-  var ok = await dbInsertCaptain(captain);
-  if(!ok){ showToast('Failed to add captain.','error'); return; }
-  document.getElementById('cap-name').value='';
-  document.getElementById('cap-team').value='';
-  renderAdminCaptains();
-  updateHeroStats();
-  showToast(name+' added as captain.','success');
-}
-
-async function renderAdminCaptains(){
-  if(!adminLoggedIn) return;
-  var el=document.getElementById('admin-captains-list');
-  el.innerHTML='<div class="loading-state"><div class="loading-spinner"></div><div class="loading-txt">Loading...</div></div>';
-  var d = await dbGetAll();
-  if(!d.captains.length){
-    el.innerHTML='<div class="empty-state"><div class="empty-icon">🏆</div><div class="empty-text">No captains yet</div></div>';
-    return;
-  }
-  el.innerHTML=d.captains.map(function(c){
-    var squad=d.players.filter(function(p){return p.captainId===c.id;});
-    var spent=squad.reduce(function(a,p){return a+(p.bidPrice||0);},0);
-    var needs=getSquadNeeds(squad);
-    var needStr=Object.keys(needs).length
-      ?Object.keys(needs).map(function(pos){return needs[pos]+' '+pos;}).join(', ')
-      :squad.length>=SQUAD_MAX?'Squad full':'No starters needed';
-    return '<div class="admin-row">'
-      +'<div class="arow-name">'+esc(c.name)+(c.team?' <span style="color:var(--txt3);font-size:0.8rem;">· '+esc(c.team)+'</span>':'')+'</div>'
-      +'<div style="font-family:var(--font-mono);font-size:0.6rem;color:var(--txt3);">Needs: '+needStr+'</div>'
-      +'<div style="font-family:var(--font-mono);font-size:0.62rem;color:var(--gold);margin-left:auto;">'+(100-spent).toFixed(1)+' cr left</div>'
-      +'<div style="font-family:var(--font-mono);font-size:0.62rem;color:var(--txt3);">'+squad.length+'/10</div>'
-      +'<button class="btn-sm btn-danger" onclick="deleteCaptain(\''+c.id+'\')">Delete</button>'
-    +'</div>';
-  }).join('');
-}
-
-async function deleteCaptain(id){
-  if(!confirm('Delete this captain? Their players will be unassigned.')) return;
-  var ok = await dbDeleteCaptain(id);
-  if(!ok){ showToast('Delete failed.','error'); return; }
-  renderAdminCaptains();
-  updateHeroStats();
-  showToast('Captain removed.','success');
-}
-
-/* ════════════════════════════════════════
-   ASSIGN TAB
-════════════════════════════════════════ */
-async function refreshAssignDropdowns(){
-  var d = await dbGetAll();
-  var pSel=document.getElementById('assign-player');
-  var cSel=document.getElementById('assign-captain');
-  var avail=d.players.filter(function(p){return p.stats&&!p.captainId;});
-  avail.sort(function(a,b){
-    var pi=POS_ORDER.indexOf(a.pos),pj=POS_ORDER.indexOf(b.pos);
-    if(pi!==pj) return pi-pj;
-    return b.price-a.price;
-  });
-  pSel.innerHTML=avail.length
-    ?avail.map(function(p){return '<option value="'+p.id+'">'+esc(p.name)+' ('+p.pos+') — '+p.price.toFixed(1)+' cr</option>';}).join('')
-    :'<option value="">No unassigned rated players</option>';
-  cSel.innerHTML=d.captains.length
-    ?d.captains.map(function(c){
-      var squad=d.players.filter(function(pl){return pl.captainId===c.id;});
-      var spent=squad.reduce(function(a,pl){return a+(pl.bidPrice||0);},0);
-      return '<option value="'+c.id+'">'+esc(c.name)+' ('+esc(c.team||'?')+') — '+(100-spent).toFixed(1)+' cr left — '+squad.length+'/10</option>';
-    }).join('')
-    :'<option value="">No captains added</option>';
-  renderCaptainNeeds(d);
-  updateAssignPreview();
-}
-
-function renderCaptainNeeds(d){
-  var el=document.getElementById('assign-captain-needs');
-  if(!d.captains.length){ el.innerHTML=''; return; }
-  var html='<div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1rem;">';
-  d.captains.forEach(function(c){
-    var squad=d.players.filter(function(p){return p.captainId===c.id;});
-    var needs=getSquadNeeds(squad);
-    var needStr=Object.keys(needs).length?Object.keys(needs).map(function(p){return needs[p]+' '+p;}).join(', '):squad.length>=SQUAD_MAX?'FULL':'OK';
-    html+='<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:0.6rem 0.85rem;">'
-      +'<div style="font-family:var(--font-mono);font-size:0.58rem;color:var(--gold);letter-spacing:0.08em;">'+esc(c.team||c.name)+'</div>'
-      +'<div style="font-family:var(--font-mono);font-size:0.58rem;color:var(--txt3);margin-top:0.15rem;">'+needStr+'</div>'
-    +'</div>';
-  });
-  el.innerHTML=html+'</div>';
-}
-
-// Assign preview uses dropdown values, reads full data from Supabase
-var _assignData = null;
-async function updateAssignPreview(){
-  var pid=document.getElementById('assign-player').value;
-  var cid=document.getElementById('assign-captain').value;
-  var bid=parseFloat(document.getElementById('assign-bid').value);
-  var el=document.getElementById('assign-preview');
-  if(!pid||!cid){ el.innerHTML=''; return; }
-  var d = await dbGetAll();
-  _assignData = d;
-  var player=d.players.find(function(p){return p.id===pid;});
-  var captain=d.captains.find(function(c){return c.id===cid;});
-  if(!player||!captain){ el.innerHTML=''; return; }
-  var squad=d.players.filter(function(p){return p.captainId===cid;});
-  var spent=squad.reduce(function(a,p){return a+(p.bidPrice||0);},0);
-  var rem=100-spent;
-  var warnings=[];
-  if(squad.length>=SQUAD_MAX) warnings.push('⚠️ Squad is already full (10/10)');
-  if(!isNaN(bid)&&bid>rem) warnings.push('⚠️ Bid ('+bid+' cr) exceeds remaining budget ('+rem.toFixed(1)+' cr)');
-  var warningHTML=warnings.length?'<div style="color:#f57070;font-family:var(--font-mono);font-size:0.62rem;margin-top:0.5rem;">'+warnings.join('<br>')+'</div>':'';
-  el.innerHTML='<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;font-family:var(--font-mono);font-size:0.65rem;color:var(--txt2);">'
-    +esc(player.name)+' ('+player.pos+', '+player.price.toFixed(1)+' cr base) → '+(captain.team||captain.name)+' · '+rem.toFixed(1)+' cr remaining'
-    +warningHTML
-  +'</div>';
-}
-
-async function assignPlayer(){
-  var pid=document.getElementById('assign-player').value;
-  var cid=document.getElementById('assign-captain').value;
-  var bid=parseFloat(document.getElementById('assign-bid').value);
-  if(!pid||!cid){ showToast('Select a player and captain.','error'); return; }
-  if(isNaN(bid)||bid<=0){ showToast('Enter a valid bid amount.','error'); return; }
-  var d = await dbGetAll();
-  var player=d.players.find(function(p){return p.id===pid;});
-  var captain=d.captains.find(function(c){return c.id===cid;});
-  if(!player||!captain) return;
-  var squad=d.players.filter(function(p){return p.captainId===cid;});
-  var spent=squad.reduce(function(a,p){return a+(p.bidPrice||0);},0);
-  var rem=100-spent;
-  if(squad.length>=SQUAD_MAX){ showToast(captain.name+"'s squad is full (10/10).",'error'); return; }
-  if(bid>rem){ showToast('Not enough credits. '+rem.toFixed(1)+' cr remaining.','error'); return; }
-  var ok = await dbUpdatePlayer(pid, {captainId:cid, bidPrice:bid});
-  if(!ok){ showToast('Assignment failed.','error'); return; }
-  document.getElementById('assign-bid').value='';
-  refreshAssignDropdowns();
-  showToast(player.name+' → '+(captain.team||captain.name)+' for '+bid+' cr','success');
-}
-
-/* ════════════════════════════════════════
-   PRICING GUIDE TAB
-════════════════════════════════════════ */
-function renderPricingGuide(){
-  var html='';
-  var posLabels={GK:'Goalkeeper',DEF:'Defender',MID:'Midfielder',FWD:'Forward'};
-  var posEmojis={GK:'🧤',DEF:'🛡️',MID:'⚙️',FWD:'⚡'};
-  ['GK','DEF','MID','FWD'].forEach(function(pos){
-    var pp=POS_PRICE[pos];
-    var stats=POS_STATS[pos];
-    var weights=STAT_WEIGHTS[pos];
-    var slotCount={GK:1,DEF:2,MID:3,FWD:1}[pos];
-    html+='<div class="pg-card"><div class="pg-pos" style="color:'+posColor(pos)+'">'+posEmojis[pos]+' '+pos+'</div>'
-      +'<div style="color:var(--txt3);font-family:var(--font-mono);font-size:0.6rem;margin-bottom:0.75rem;">'+posLabels[pos]+' · '+slotCount+' starter slot'+(slotCount>1?'s':'')+'</div>'
-      +'<div class="pg-row"><span>Min price</span><span>'+pp.base.toFixed(1)+' cr</span></div>'
-      +'<div class="pg-row"><span>Max price</span><span>'+pp.ceil.toFixed(1)+' cr</span></div>'
-      +'<div style="border-top:1px solid var(--border);margin:0.5rem 0;"></div>'
-      +stats.map(function(s){return '<div class="pg-row"><span>'+s+'</span><span>×'+weights[s]+'</span></div>';}).join('')
-    +'</div>';
-  });
-  document.getElementById('pricing-guide-content').innerHTML=html;
-}
-
-/* ════════════════════════════════════════
-   SETTINGS
-════════════════════════════════════════ */
-function changePassword(){
-  var pw=document.getElementById('new-pw').value.trim();
-  if(pw.length<4){ showToast('Password must be at least 4 characters.','error'); return; }
-  localStorage.setItem(ADMIN_PW_KEY,pw);
-  document.getElementById('new-pw').value='';
-  showToast('Password updated.','success');
-}
-async function clearAllData(){
-  if(!confirm('Delete ALL players and captains from Supabase? This cannot be undone.')) return;
-  var ok = await dbClearAll();
-  if(!ok){ showToast('Clear failed.','error'); return; }
-  renderAdminPlayers();
-  renderAdminCaptains();
-  updateHeroStats();
-  showToast('All data cleared.','success');
-}
-
-/* ════════════════════════════════════════
-   HERO STATS
-════════════════════════════════════════ */
-async function updateHeroStats(){
-  var d = await dbGetAll();
-  var pc=d.players.length, rc=d.players.filter(function(p){return p.stats;}).length, cc=d.captains.length;
-  var sp=document.getElementById('stat-players');   if(sp) sp.textContent=pc;
-  var sr=document.getElementById('stat-rated');     if(sr) sr.textContent=rc;
-  var sc=document.getElementById('stat-captains');  if(sc) sc.textContent=cc;
-  ['tick-players','tick-players2'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=pc+' Players Registered';});
-  ['tick-rated','tick-rated2'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=rc+' Rated';});
-  ['tick-caps','tick-caps2'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=cc+' Captains';});
-}
-
-/* ════════════════════════════════════════
-   UTILITIES
-════════════════════════════════════════ */
-function esc(s){
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-var toastTimer;
-function showToast(msg,type){
-  var el=document.getElementById('toast');
-  el.textContent=msg;
-  el.className='toast show'+(type?' '+type:'');
-  clearTimeout(toastTimer);
-  toastTimer=setTimeout(function(){el.className='toast';},3200);
-}
-
-/* ════════════════════════════════════════
-   INIT
-════════════════════════════════════════ */
-initSupabase();
-updateSelfRatingDisplay();
-updateHeroStats();
-</script>
-</body>
-</html>
+      +'<div class="pitch-view"><div class="
